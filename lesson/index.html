@@ -1,0 +1,1743 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Komparativ и Superlativ в немецком: -er, als, am -sten, умляуты и наглые исключения. С анимациями, озвучкой и тестом.">
+<meta property="og:title" content="Степени сравнения. Kleiner, größer, am besten">
+<meta property="og:description" content="Komparativ и Superlativ в немецком: -er, als, am -sten, умляуты и наглые исключения. С анимациями, озвучкой и тестом.">
+<meta name="theme-color" content="#09090A">
+<link rel="icon" href="../media/logo.webp">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}</style>
+<title>Степени сравнения. Kleiner, größer, am besten</title>
+<link rel="preload" href="../assets/fonts/rubik-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/bagelfatone-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Bagel Fat One';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/bagelfatone-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Onest';font-style:normal;font-weight:300 700;font-display:swap;src:url(../assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:300 700;font-display:swap;src:url(../assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:800 900;font-display:swap;src:url(../assets/fonts/rubik-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:800 900;font-display:swap;src:url(../assets/fonts/rubik-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<script defer src="../assets/gsap-bundle.min.js"></script>
+
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#09090A; --bg2:#0E0E10; --card:#141416; --card2:#1B1B1E; --key:#0F0F11;
+  --line:rgba(255,255,255,.065); --line2:rgba(255,255,255,.13);
+  --ink:#F4F4F5; --ink2:#C6C6CC; --mute:#8A8A92; --dim:#5A5A61;
+  --lime:#E3F65A; --lime2:#C9E23A; --limeg:linear-gradient(135deg,#F2FF86 0%,#D9F04A 55%,#BFD82E 100%);
+  --vio:#8C6CF7; --vio2:#A586FF; --viog:linear-gradient(90deg,#7A5AF0 0%,#9B78FF 60%,#A889FF 100%);
+  --blue:#2BA4E0; --blueg:linear-gradient(145deg,#3BB2EC 0%,#259BDA 55%,#1D89CB 100%);
+  --red:#FF5C64; --r:22px; --gut:16px;
+  --fd:'Rubik',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fb:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--fb);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,video,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+p{margin:0}
+main{overflow-x:clip;position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.125em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+
+/* ---------- background: grid + coins + chart bars ---------- */
+.bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(600px 420px at 85% 8%, rgba(140,108,247,.10), transparent 70%),
+  radial-gradient(520px 520px at 8% 60%, rgba(43,164,224,.07), transparent 70%),
+  var(--bg)}
+.bgfx:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 85%);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 85%);opacity:.7}
+.coin{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a2a2e,#121214 62%);box-shadow:inset 0 0 0 10px rgba(255,255,255,.015),0 30px 80px rgba(0,0,0,.6);filter:blur(5px);opacity:.55}
+.bars{position:absolute;bottom:0;display:flex;align-items:flex-end;gap:10px;pointer-events:none;z-index:0}
+.bars i{display:block;width:13px;border-radius:9px 9px 0 0;background:linear-gradient(to top,rgba(30,110,200,0),rgba(40,130,225,.55));transform-origin:50% 100%}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(9,9,10,.82);border-bottom:1px solid var(--line)}
+@media (min-width:900px){.topbar{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);background:rgba(9,9,10,.6)}}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:58px}
+.brand{display:flex;align-items:center;gap:10px;font:500 15px/1 var(--fb);letter-spacing:.02em}
+.brand img{width:30px;height:30px;border-radius:9px;background:#F4F4F5;padding:3px}
+.brand small{display:block;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.tnav{display:none;gap:30px;font-size:13px;color:var(--mute)}
+.tnav a{transition:color .2s}.tnav a:hover{color:var(--ink)}
+@media (min-width:1000px){.tnav{display:flex}}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);padding:9px 14px;border:1px solid var(--line2);border-radius:999px;white-space:nowrap}
+.tlink.v{background:var(--viog);border-color:transparent;color:#fff}
+.prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:0 50%}
+
+/* ---------- type ---------- */
+.H{font:800 clamp(30px,8.4vw,74px)/.96 var(--fd);text-transform:uppercase;letter-spacing:-.012em;text-align:center;margin:0 auto;max-width:15ch;text-wrap:balance}
+.H em,.T em,.G em{font-style:normal;color:var(--lime)}
+.H .wd,.T .wd,.G .wd{display:inline-block}
+.T{font:300 clamp(46px,14vw,128px)/.9 var(--fb);text-transform:uppercase;letter-spacing:-.035em;margin:0}
+.G{font:500 clamp(40px,11.6vw,104px)/.94 var(--fb);text-transform:uppercase;letter-spacing:-.05em;color:#D3D3D8;margin:0}
+.H.l{text-align:left;margin:0;max-width:none}
+.lede{font:300 clamp(17px,4.6vw,21px)/1.45 var(--fb);color:var(--ink2);max-width:36ch}
+.lede b{font-weight:600;color:var(--ink)}
+.copy{max-width:58ch;margin:22px auto 0;text-align:center;color:var(--ink2);font-size:16.5px}
+.copy p+p{margin-top:10px}
+.copy b{color:var(--ink);font-weight:600}
+.eyb{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border:1px solid var(--line2);border-radius:999px;font:500 10.5px/1 var(--fb);letter-spacing:.42em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.eyb b{color:var(--lime);font-weight:600;letter-spacing:.2em}
+.vt{writing-mode:vertical-rl;transform:rotate(180deg);font:500 11px/1 var(--fb);letter-spacing:.45em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.de{font-weight:600;color:var(--ink)}
+.li{color:var(--lime)}
+.ru{color:var(--mute)}
+.shd{display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:30px;text-align:center}
+section{position:relative;padding:76px 0}
+@media (min-width:900px){section{padding:110px 0}}
+
+/* ---------- buttons, pills, badges ---------- */
+.bv{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 26px;border-radius:10px;background:var(--viog);color:#fff;font:500 16px/1 var(--fb);letter-spacing:.02em;box-shadow:0 5px 0 #5A40C4,0 18px 44px rgba(140,108,247,.35);transition:translate .2s, box-shadow .2s;white-space:nowrap}
+.bv:hover{translate:0 -2px}
+.bv:active{translate:0 4px;box-shadow:0 1px 0 #5A40C4,0 10px 24px rgba(140,108,247,.3)}
+.bv.big{padding:22px 34px;font-size:17px;width:100%;max-width:400px}
+.bp{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:22px 30px;border-radius:999px;background:var(--viog);color:#fff;font:500 17px/1 var(--fb);white-space:nowrap;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 20px 60px rgba(140,108,247,.55),0 0 120px rgba(140,108,247,.35);transition:scale .25s}
+.bp:hover{scale:1.03}
+.bo{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--line2);border-radius:999px;color:var(--ink);font-size:15px;transition:border-color .2s,background .2s}
+.bo:hover{border-color:var(--lime);background:rgba(227,246,90,.06)}
+.rb{width:46px;height:46px;border-radius:50%;flex:none;background:radial-gradient(circle at 50% 30%,#2A2A2F,#141416 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 -2px 6px rgba(0,0,0,.6),0 10px 24px rgba(0,0,0,.55);display:grid;place-items:center;color:var(--lime);font-size:20px}
+.rb .ic{stroke-width:2.2;filter:drop-shadow(0 0 8px rgba(227,246,90,.35))}
+.lq{width:62px;height:62px;border-radius:14px;flex:none;background:var(--limeg);color:#2B3108;display:grid;place-items:center;font-size:26px;box-shadow:inset 0 -6px 14px rgba(0,0,0,.14),inset 0 2px 0 rgba(255,255,255,.5),0 12px 30px rgba(220,245,90,.16)}
+.lq .ic{stroke-width:2.3}
+.tagc{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#111;border-radius:6px;padding:11px 18px 11px 14px;box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.tagc .ck{width:18px;height:18px;border-radius:50%;background:var(--vio);color:#fff;display:grid;place-items:center;font-size:11px}
+.tagc .ck .ic{stroke-width:3.4}
+.tagc b{display:block;font:500 15px/1.15 var(--fb)}
+.tagc small{display:block;font-size:11px;color:#9A9AA2;margin-top:2px}
+.np{display:inline-flex;align-items:center;padding:12px 30px;border:1.5px solid rgba(255,255,255,.8);border-radius:999px;font:400 17px/1 var(--fb);color:#fff;background:rgba(0,0,0,.25)}
+.cur{width:34px;height:34px;color:#fff;stroke-width:1.4;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+.say{width:34px;height:34px;border-radius:50%;flex:none;display:inline-grid;place-items:center;background:#202024;color:var(--lime);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:background .2s,scale .2s}
+.say svg{width:16px;height:16px}
+.say:hover{scale:1.08}
+.say.on{background:var(--lime);color:#111}
+.no-tts .say{display:none}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#1A1A1D;border:1px solid var(--line);font:500 15px/1 var(--fb);color:var(--ink2);transition:background .2s,color .2s,border-color .2s}
+.chip.on{background:var(--lime);color:#111;border-color:var(--lime)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+
+/* ---------- cards ---------- */
+.cd{position:relative;background:linear-gradient(180deg,#19191C 0%,#111113 100%);border:1px solid var(--line);border-radius:var(--r);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.cd.p{padding:24px}
+.blue{background:var(--blueg);border:0;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 24px 60px rgba(20,120,200,.18)}
+.ex{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.ex:first-child{border-top:0}
+.ex p{flex:1;font-size:15.5px;line-height:1.4}
+.ex p small{display:block;color:var(--mute);font-size:13.5px;margin-top:2px}
+.ex .de{font-size:16.5px}
+
+/* ---------- reveal fallbacks (no GSAP) ---------- */
+.rv,.stg>*{transition:translate .8s cubic-bezier(.2,.8,.2,1)}
+html:not(.gs) .rv:not(.in),html:not(.gs) .stg:not(.in)>*{translate:0 30px}
+html.gs .rv,html.gs .stg>*{transition:none}
+
+/* ---------- HERO ---------- */
+.hero{padding:18px 0 40px}
+.hframe{position:relative;border:1px solid var(--line);border-radius:28px;background:radial-gradient(120% 80% at 70% 0%,#17171A 0%,#0C0C0E 60%);padding:22px 18px 26px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.hnav{display:none}
+@media (min-width:900px){.hnav{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--dim);margin-bottom:34px}.hnav nav{display:flex;gap:46px}.hnav .soc{display:flex;gap:22px;align-items:center}.hnav .soc a:last-child{border-bottom:1px solid var(--dim);padding-bottom:2px}}
+.hrail{display:flex;gap:12px;padding:10px;border-radius:999px;background:rgba(255,255,255,.025);border:1px solid var(--line);width:max-content;margin-bottom:22px}
+.hgrid{position:relative;z-index:2;display:grid;gap:24px}
+.wm{margin:0;font:300 clamp(92px,30vw,230px)/.82 var(--fb);letter-spacing:-.04em;color:var(--lime);display:flex;align-items:center;gap:.02em;text-shadow:0 0 60px rgba(227,246,90,.18)}
+.wm span{display:inline-block;animation:wmIn 1s cubic-bezier(.2,1.3,.4,1) both}
+.wm span:nth-child(2){animation-delay:.08s}.wm span:nth-child(3){animation-delay:.16s}.wm span:nth-child(4){animation-delay:.24s}
+@keyframes wmIn{from{translate:0 40%;rotate:6deg}to{translate:0 0;rotate:0deg}}
+.opill{width:.62em;height:.8em;border:.045em solid var(--lime);border-radius:.32em;display:inline-grid!important;place-items:center;margin:0 .03em;box-shadow:0 0 40px rgba(227,246,90,.15),inset 0 0 30px rgba(227,246,90,.06)}
+.opill .ic{width:.26em;height:.26em;stroke:none;fill:var(--lime)}
+.wm2{font:300 clamp(25px,8.6vw,68px)/1 var(--fb);letter-spacing:.17em;text-transform:uppercase;margin-top:12px;color:#F0F0F2;white-space:nowrap;animation:fadeUp 1s .3s both}
+@keyframes fadeUp{from{translate:0 24px;opacity:0}to{translate:0 0;opacity:1}}
+.hlede{font:300 17px/1.5 var(--fb);color:var(--ink2);max-width:30ch;margin:30px 0 26px}
+.hlede b{font-weight:600;color:#fff}
+.hside{display:flex;flex-direction:column;gap:16px}
+.ten{display:flex;align-items:flex-start;gap:8px}
+.ten b{font:200 clamp(92px,27vw,190px)/.8 var(--fb);font-weight:300;letter-spacing:-.06em;color:#fff}
+.ten .vt{font:300 clamp(24px,7vw,48px)/1 var(--fb);letter-spacing:.06em;text-transform:none;color:#E8E8EC;transform:rotate(180deg)}
+.hside p{color:var(--ink2);font-size:15px;max-width:26ch}
+.hvis{position:relative;height:300px;margin:6px -18px 0;overflow:hidden}
+.hvis .bars{left:0;right:0;justify-content:space-around;gap:0;padding:0 8px}
+.hvis .bars i{width:12px}
+.hvis .stp{position:absolute;bottom:0;display:flex;flex-direction:column;align-items:center;gap:10px;width:30%}
+.stp .col{width:100%;border-radius:14px 14px 0 0;background:linear-gradient(180deg,#3BB2EC 0%,#1E7FC4 55%,#0E2F52 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 -10px 40px rgba(43,164,224,.18);transform-origin:50% 100%;animation:grow 1.2s cubic-bezier(.2,1.2,.4,1) both}
+.stp.s2 .col{animation-delay:.2s;background:linear-gradient(180deg,#8FD3F7 0%,#2BA4E0 55%,#0E2F52 100%)}
+.stp.s3 .col{animation-delay:.4s;background:linear-gradient(180deg,#F2FF86 0%,#C9E23A 55%,#2C330B 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 -10px 50px rgba(227,246,90,.25)}
+.hvis .bars{opacity:.4}
+@keyframes grow{from{scale:1 .2}to{scale:1 1}}
+.stp .lb{font:500 14px/1.1 var(--fb);background:#fff;color:#111;padding:8px 12px;border-radius:6px;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.stp .lb small{display:block;font-size:10px;color:#999;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.stp.s3 .lb{background:var(--lime)}
+.hcur{position:absolute;z-index:4;left:56%;top:22%;width:30px;height:30px;color:#fff;pointer-events:none}
+.svcs{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:18px calc(var(--gut)*-1) 0;padding:6px var(--gut) 14px;scrollbar-width:none}
+.svcs::-webkit-scrollbar{display:none}
+.svc{scroll-snap-align:start;flex:0 0 80%;max-width:340px;min-height:290px;padding:26px 24px;display:flex;flex-direction:column}
+.svc h3{font:400 25px/1.15 var(--fb);margin:0;padding-right:30px}
+.svc .ar{position:absolute;right:22px;top:26px;font-size:22px;color:#fff}
+.svc p{color:var(--mute);font-size:14px;margin-top:12px;max-width:24ch}
+.svc .orb{position:absolute;left:50%;bottom:-62px;width:170px;height:170px;margin-left:-85px;border-radius:50%;display:grid;place-items:center;padding-bottom:50px;font:500 22px/1 var(--fb);text-align:center}
+.svc .orb:before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid var(--line2)}
+.svc .orb.o1{border:3px solid #fff;color:#fff}
+.svc .orb.o2{background:var(--blueg);color:#fff;box-shadow:0 0 50px rgba(43,164,224,.35)}
+.svc .orb.o3{background:var(--limeg);color:#1d2205;box-shadow:0 0 60px rgba(227,246,90,.3)}
+.svc .orb .ic{display:block;margin:0 auto 6px;width:22px;height:22px;stroke-width:2.4}
+@media (min-width:900px){
+  .hframe{padding:34px 54px 40px}
+  .hgrid{grid-template-columns:auto 1fr 1fr;align-items:start;gap:30px}
+  .hrail{flex-direction:column;margin:0;border-radius:24px}
+  .hside{grid-column:3;grid-row:1;align-items:flex-end;text-align:right}
+  .hside p{text-align:left}
+  .hvis{grid-column:2/4;grid-row:2;height:340px;margin:0}
+  .svcs{overflow:visible;margin:-90px 0 0;padding:0 0 0 76px;position:relative;z-index:3}
+  .svc{flex:1;max-width:none}
+  .svc:nth-child(2){translate:0 -30px}
+}
+
+/* ---------- route ---------- */
+.route{position:relative;margin-top:26px}
+.rt{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 16px;scrollbar-width:none;scroll-snap-type:x proximity}
+.rt::-webkit-scrollbar{display:none}
+.rt a{flex:none;scroll-snap-align:start;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#141416;border:1px solid var(--line);font-size:14px;color:var(--ink2);transition:border-color .2s}
+.rt a:hover{border-color:var(--lime)}
+.rt a i{font:600 11px/1 var(--fb);font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#202024;color:var(--lime)}
+.rtl{height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.rtl b{display:block;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:0 50%}
+
+/* ---------- marquee band ---------- */
+.band{overflow:hidden;background:var(--lime);color:#111;transform:rotate(-2deg);margin:10px -20px;padding:14px 0;box-shadow:0 20px 60px rgba(227,246,90,.12)}
+.band.dk{background:#141416;color:var(--ink);transform:rotate(1.4deg);margin-top:-6px;border-block:1px solid var(--line)}
+.track{display:flex;width:max-content;animation:mq 30s linear infinite}
+html.gs .track{animation:none}
+.track span{font:800 20px/1 var(--fd);text-transform:uppercase;letter-spacing:.02em;padding:0 22px;white-space:nowrap;display:flex;align-items:center;gap:22px}
+.track span:after{content:"✳";font-size:16px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- INTRO (Diana layout) ---------- */
+.intro{display:grid;gap:22px}
+.ibox{padding:30px 22px;border-radius:28px}
+.ibox .T{margin:22px 0 18px}
+.ibox .lede{font-size:16.5px;max-width:34ch}
+.facts{display:grid;gap:12px;margin:24px 0 20px}
+.fact{display:flex;gap:16px;align-items:center;padding:14px;border-radius:16px;background:#151517;border:1px solid var(--line)}
+.fact p{font-size:14.5px;color:var(--ink2);line-height:1.42}
+.fact p b{color:#fff;font-weight:600}
+.more{display:inline-flex;align-items:flex-end;gap:12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.more span{border-bottom:1px solid var(--dim);padding-bottom:6px}
+.ladder{padding:26px 20px 22px;border-radius:28px;min-height:330px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.ladder .bars{right:10px;opacity:.28}
+.lr{position:relative;z-index:1;display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line2)}
+.lr:last-of-type{border:0}
+.lr small{flex:0 0 78px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.lr .lw{font:300 30px/1.05 var(--fb);letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.lr:nth-of-type(2) .lw{font-size:clamp(34px,10vw,46px)}
+.lr:nth-of-type(3) .lw{font-size:clamp(36px,11.2vw,60px)}
+.lw .s{color:var(--lime);font-weight:400}
+.lw .a{color:var(--lime);font-weight:400}
+.lw .u{position:relative;display:inline-block}
+.lw .u i{position:absolute;left:50%;top:-.02em;translate:-50% 0;display:flex;gap:.12em}
+.lw .u i:before,.lw .u i:after{content:"";width:.13em;height:.13em;border-radius:50%;background:var(--lime);box-shadow:0 0 10px rgba(227,246,90,.7)}
+.lw .ch{display:inline-block}
+.lcap{position:relative;z-index:1;margin-top:10px;font-size:13.5px;color:var(--mute)}
+.lcap b{color:var(--lime);font-weight:600}
+@media (min-width:900px){.intro{grid-template-columns:1.05fr .95fr;align-items:stretch}.ibox{padding:44px 46px}}
+
+/* ---------- PODIUM ---------- */
+.pod{padding:22px 16px 18px;border-radius:28px}
+.pstage{position:relative;height:clamp(300px,82vw,420px);display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,26px);clip-path:inset(-120px -40px 0 -40px);padding-top:10px}
+.pc{position:relative;flex:0 0 30%;max-width:190px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.pc .pw{position:relative;z-index:3;margin-bottom:12px;font:400 clamp(15px,4.5vw,27px)/1.1 var(--fb);color:#fff;text-align:center;white-space:nowrap;min-height:1.2em;transition:opacity .35s,translate .5s cubic-bezier(.2,1.3,.4,1);opacity:0;translate:0 14px}
+.pc.on .pw{opacity:1;translate:0 0}
+.pw .s,.pw .a,.pw .u{color:var(--lime)}
+.pw .s{display:inline-block}
+.pw .irr{color:var(--lime);border-bottom:2px dashed var(--lime)}
+.cyl{position:relative;width:100%;height:var(--h);translate:0 105%;transition:translate .9s cubic-bezier(.2,1.15,.35,1)}
+.pc.on .cyl{translate:0 0}
+.cyl .bd{position:absolute;left:0;right:0;top:calc(var(--rx) / 2);bottom:0;background:linear-gradient(90deg,#0C0C0E 0%,#232327 30%,#1A1A1D 62%,#0B0B0C 100%);border-radius:0 0 6px 6px}
+.cyl .tp{position:absolute;left:0;right:0;top:0;height:var(--rx);border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#2C2C31,#18181B 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -6px 14px rgba(0,0,0,.5);display:grid;place-items:center}
+.cyl .tp .ic{color:var(--lime);width:30%;height:auto;max-width:34px;stroke-width:2.6;filter:drop-shadow(0 0 12px rgba(227,246,90,.55));transition:scale .5s cubic-bezier(.2,1.6,.4,1)}
+.pc:not(.on) .tp .ic{scale:.3}
+.cyl .lbl{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:500 clamp(9px,2.6vw,12px)/1 var(--fb);letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.cyl .lbl b{display:block;font:300 clamp(22px,6vw,34px)/1 var(--fb);letter-spacing:-.02em;color:var(--lime);margin-bottom:6px}
+.pc .crown{display:block;color:var(--lime);font-size:clamp(22px,6vw,30px);margin-bottom:6px;opacity:0;scale:.3;transition:opacity .3s,scale .6s cubic-bezier(.2,1.8,.4,1);filter:drop-shadow(0 0 12px rgba(227,246,90,.6))}
+.pc.cr .crown{opacity:1;scale:1}
+.pex .ex{transition:opacity .4s}
+.pex .ex.off{opacity:.28}
+.pfloor{position:absolute;left:-10%;right:-10%;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--line2),transparent)}
+.pctl{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:18px}
+.pdots{display:flex;gap:8px}
+.pdots button{width:42px;height:42px;border-radius:50%;background:#1A1A1D;border:1px solid var(--line);font:600 14px/1 var(--fb);color:var(--mute);transition:background .25s,color .25s}
+.pdots button.on{background:var(--lime);color:#111;border-color:var(--lime)}
+.pplay{width:42px;height:42px;border-radius:50%;background:var(--viog);color:#fff;display:grid;place-items:center}
+.pcap{text-align:center;color:var(--ink2);font-size:15.5px;min-height:3.1em;margin:16px auto 0;max-width:42ch}
+.pcap b{color:#fff}
+.pex{margin-top:16px;padding:6px 18px;border-radius:18px;background:#121214;border:1px solid var(--line)}
+.ptri{display:grid;gap:12px;margin-top:16px}
+.ptri .cd{padding:22px 22px 22px 22px;display:flex;gap:16px;align-items:flex-start}
+.ptri h4{margin:0 0 6px;font:600 18px/1.2 var(--fb)}
+.ptri p{color:var(--mute);font-size:14.5px;line-height:1.45}
+.blk{position:relative;width:64px;height:64px;flex:none;border-radius:14px;background:linear-gradient(160deg,#2a2a2e,#0d0d0f);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 14px 28px rgba(0,0,0,.6);display:grid;place-items:center}
+.blk:after{content:"";position:absolute;width:30px;height:30px;border-radius:50%;background:#0C0C0E;box-shadow:inset 0 0 0 2px #2b2b30}
+.blk .ic{position:relative;z-index:1;color:var(--lime);font-size:18px;stroke-width:2.6}
+@media (min-width:900px){.podgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:start}.ptri{margin-top:0}}
+
+/* ---------- KOMPARATIV: keypad + duel ---------- */
+.kgrid{display:grid;gap:16px}
+.kp{padding:24px 20px 22px;border-radius:28px;overflow:hidden}
+.kp h3{font:800 clamp(24px,7vw,36px)/1 var(--fd);text-transform:uppercase;margin:0 0 8px;color:#fff}
+.kp>p{color:rgba(255,255,255,.85);font-size:14.5px;max-width:30ch}
+.calc{margin-top:18px;background:#0B0B0D;border-radius:22px;padding:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px rgba(0,0,0,.35);rotate:-1.2deg}
+.disp{background:#151518;border-radius:14px;padding:14px 16px;min-height:96px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;gap:4px;overflow:hidden}
+.disp small{font-size:11.5px;color:var(--dim);letter-spacing:.06em;min-height:1.2em;text-align:right}
+.disp .dw{font:300 clamp(30px,9.6vw,44px)/1 var(--fb);color:#fff;white-space:nowrap}
+.disp .dw .s{color:var(--lime);display:inline-block}
+.disp .dsent{font-size:13.5px;color:var(--ink2);text-align:right;min-height:1.3em}
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.keys button{height:54px;border-radius:12px;background:#1A1A1E;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 3px 0 #050506;font:400 15px/1 var(--fb);color:#EDEDF0;transition:background .15s,translate .1s,color .15s}
+.keys button.f{color:var(--lime);font-weight:600}
+.keys button.eq{background:var(--limeg);color:#111;font:600 22px/1 var(--fb)}
+.keys button.hit{background:#2A2A30;translate:0 2px}
+.keys button.eq.hit{background:#F6FF9A}
+.duel{padding:24px 20px;border-radius:28px}
+.duel h3{font:800 clamp(24px,7vw,36px)/1 var(--fd);text-transform:uppercase;margin:0 0 6px}
+.duel>p{color:var(--mute);font-size:14.5px}
+.dstage{position:relative;height:250px;display:flex;align-items:flex-end;justify-content:center;gap:clamp(40px,16vw,90px);margin-top:16px;border-bottom:1px solid var(--line2)}
+.dcol{width:clamp(70px,22vw,110px);display:flex;flex-direction:column;align-items:center;gap:10px}
+.dcol .hs{width:100%;height:var(--dh,150px);border-radius:12px 12px 0 0;transition:height .9s cubic-bezier(.2,1.2,.35,1);background:linear-gradient(180deg,rgba(60,170,240,.85),rgba(30,110,200,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.3);position:relative;display:grid;place-items:start center;padding-top:12px}
+.dcol .hs .ic{color:#fff;font-size:26px}
+.dcol:last-child .hs{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.03))}
+.dcol small{font-size:12px;color:var(--mute);letter-spacing:.04em;text-align:center}
+.dmid{position:absolute;left:50%;bottom:90px;translate:-50% 0;z-index:3;font:600 22px/1 var(--fb);padding:12px 18px;border-radius:999px;background:var(--lime);color:#111;box-shadow:0 0 40px rgba(227,246,90,.4);transition:scale .5s cubic-bezier(.2,1.8,.4,1),background .3s}
+.dmid.wie{background:#fff}
+.dsent{margin-top:18px;text-align:center;font-size:17px;min-height:2.8em}
+.dsent .de b{color:var(--lime);font-weight:600}
+.dsent small{display:block;color:var(--mute);font-size:14px;margin-top:4px}
+.dtog{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.warn{display:flex;gap:14px;align-items:flex-start;margin-top:16px;padding:16px;border-radius:16px;background:rgba(255,92,100,.07);border:1px solid rgba(255,92,100,.2);font-size:14.5px;color:var(--ink2)}
+.warn .ic{color:var(--red);font-size:20px;margin-top:2px}
+.warn b{color:#fff}
+@media (min-width:900px){.kgrid{grid-template-columns:1fr 1fr}}
+
+/* ---------- UMLAUT ---------- */
+.ugrid{display:grid;gap:16px}
+.utiles{display:flex;justify-content:center;gap:clamp(10px,4vw,24px);padding:30px 10px 20px}
+.ut{position:relative;width:clamp(84px,25vw,130px);height:clamp(110px,32vw,160px);border-radius:22px;display:grid;place-items:center;font:300 clamp(64px,19vw,104px)/1 var(--fb);color:#fff;background:linear-gradient(180deg,#1C1C20,#101012);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 20px 40px rgba(0,0,0,.5)}
+.ut .dd{position:absolute;left:50%;top:18%;translate:-50% 0;display:flex;gap:clamp(9px,3vw,16px)}
+.ut .dd b{width:clamp(10px,3vw,15px);height:clamp(10px,3vw,15px);border-radius:50%;background:var(--lime);box-shadow:0 0 16px rgba(227,246,90,.8)}
+.ut small{position:absolute;bottom:10px;font:500 11px/1 var(--fb);letter-spacing:.2em;color:var(--dim)}
+.ulist{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.uw{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 12px 12px 14px;border-radius:14px;background:#141416;border:1px solid var(--line);font-size:15.5px;cursor:pointer}
+.uw .flip{color:#fff;font-weight:500}
+.uw .ru{font-size:12px}
+.nodots{padding:22px}
+.nodots h4{display:flex;align-items:center;gap:10px;margin:0 0 6px;font:600 17px/1.2 var(--fb)}
+.nodots h4 .ic{color:var(--red)}
+.nodots p{color:var(--mute);font-size:14.5px}
+.nodots .chips{justify-content:flex-start;margin-top:14px}
+.nodots .chip{font-size:14px}
+.flip{display:inline-flex;white-space:pre}
+.flip>span{display:inline-block}
+.flip .fl{position:relative;display:inline-grid;overflow:hidden;padding:.12em 0;margin:-.12em 0;vertical-align:bottom}
+.flip .fl i{grid-area:1/1;font-style:normal;transition:translate .45s cubic-bezier(.2,1.3,.4,1),opacity .3s}
+.flip .fb{opacity:0;translate:0 60%;color:var(--lime)}
+.flip.to .fa{opacity:0;translate:0 -60%}
+.flip.to .fb{opacity:1;translate:0 0}
+@media (min-width:900px){.ugrid{grid-template-columns:1.1fr .9fr;align-items:start}.ulist{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- E DROP ---------- */
+.edrop{padding:26px 18px 22px;border-radius:28px}
+.erow{display:flex;justify-content:center;align-items:baseline;min-height:84px;font:300 clamp(46px,14vw,86px)/1 var(--fb);letter-spacing:-.01em;color:#fff;position:relative}
+.erow .L{display:inline-block;overflow:visible;transition:max-width .6s cubic-bezier(.4,0,.2,1),margin .6s;max-width:1em;text-align:center}
+.erow .L b{display:inline-block;font-weight:inherit}
+.erow .L.bad b{color:var(--red);text-shadow:0 0 22px rgba(255,92,100,.6)}
+.erow .L.gone{max-width:0;overflow:hidden}
+.erow .L.sfx b{color:var(--lime)}
+.erow .L.keep b{color:var(--lime);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+.ebin{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,92,100,.1);color:var(--red);font-size:20px}
+.ecap{text-align:center;color:var(--ink2);font-size:15px;min-height:3em;margin-top:12px}
+.ecap b{color:#fff}
+.erows2{display:grid;gap:8px;margin-top:16px}
+.e2{display:grid;grid-template-columns:.9fr 1fr 1.3fr;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#121214;border:1px solid var(--line);font-size:15px}
+.e2.hd{background:none;border:0;padding:0 14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.e2.on{border-color:var(--lime)}
+.e2 .de{white-space:nowrap}
+.e2 .de i{font-style:normal;color:var(--lime)}
+.e2 s{color:var(--red);text-decoration:none;opacity:.55}
+
+/* ---------- SUPERLATIV flow ---------- */
+.flow{position:relative;padding:22px 16px 26px;border-radius:28px}
+.fphr{position:relative;z-index:3;margin:0 auto;width:max-content;max-width:100%;padding:12px 18px;border-radius:999px;background:#fff;color:#111;font:500 clamp(14px,4.3vw,18px)/1.2 var(--fb);box-shadow:0 14px 30px rgba(0,0,0,.5);white-space:nowrap}
+.fphr i{font-style:normal;color:#8a8a92}
+.fq{position:relative;z-index:2;margin:30px auto 0;max-width:330px;padding:16px 18px;border-radius:18px;text-align:center;font:500 15.5px/1.35 var(--fb);background:#1C1C20;border:1px solid var(--line2);transition:box-shadow .3s,border-color .3s}
+.fq.hit{border-color:var(--lime);box-shadow:0 0 0 4px rgba(227,246,90,.12)}
+.fq small{display:block;color:var(--mute);font-size:12.5px;margin-top:4px;font-weight:400}
+.fbr{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.fbr:before{content:"";position:absolute;left:25%;right:25%;top:-26px;height:26px;border:1.5px solid var(--line2);border-bottom:0;border-radius:14px 14px 0 0}
+.fbr:after{content:"";position:absolute;left:50%;top:-40px;height:14px;border-left:1.5px solid var(--line2)}
+.fo{position:relative;padding:16px 14px;border-radius:18px;background:#141416;border:1px solid var(--line);text-align:center;transition:border-color .3s,background .3s}
+.fo .yn{display:inline-block;font:600 11px/1 var(--fb);letter-spacing:.2em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:#222226;color:var(--mute);margin-bottom:10px;transition:background .3s,color .3s}
+.fo b{display:block;font:300 clamp(20px,6vw,30px)/1.1 var(--fb);color:#fff}
+.fo b i{font-style:normal;color:var(--lime)}
+.fo small{display:block;color:var(--mute);font-size:12.5px;margin-top:6px;line-height:1.35}
+.fo.hit{border-color:var(--lime);background:#191A12}
+.fo.hit .yn{background:var(--lime);color:#111}
+.fres{margin-top:18px;text-align:center;min-height:3.2em;font-size:17px}
+.fres .de b{color:var(--lime);font-weight:600}
+.fres small{display:block;color:var(--mute);font-size:14px;margin-top:3px}
+.sgrid{display:grid;gap:16px}
+.chart{padding:24px 22px 150px;border-radius:28px;min-height:240px}
+.chart h4{font:800 clamp(22px,6.4vw,30px)/1 var(--fd);text-transform:uppercase;margin:0 0 10px}
+.chart p{color:var(--mute);font-size:14.5px;max-width:30ch}
+.chart svg.ln{position:absolute;left:0;right:0;bottom:0;width:100%;height:120px}
+.chart .pill{position:absolute;padding:8px 12px;border-radius:999px;background:#fff;color:#111;font:600 13px/1 var(--fb);box-shadow:0 10px 20px rgba(0,0,0,.4)}
+.chart .knob{position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#111;border:5px solid #fff;margin:-11px 0 0 -11px}
+@media (min-width:900px){.sgrid{grid-template-columns:1.2fr .8fr}}
+
+/* ---------- E INSERT ---------- */
+.eins{padding:26px 18px 22px;border-radius:28px;text-align:center}
+.einw{display:inline-flex;align-items:baseline;justify-content:center;font:300 clamp(36px,11vw,72px)/1 var(--fb);color:#fff;min-height:80px;white-space:nowrap}
+.einw .am{color:var(--lime);margin-right:.25em}
+.einw .clu{display:inline-block;transition:color .3s}
+.einw .clu.bad{color:var(--red)}
+.einw .ins{display:inline-block;color:var(--lime);max-width:0;overflow:hidden;transition:max-width .5s cubic-bezier(.2,1.3,.4,1);vertical-align:bottom}
+.einw .ins.on{max-width:.8em}
+.einw .sf{color:var(--lime)}
+.ecap2{color:var(--ink2);font-size:15px;min-height:3em;margin-top:10px}
+.ecap2 b{color:#fff}
+.ends{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.ends span{font:600 15px/1 var(--fb);padding:10px 14px;border-radius:12px;background:#1A1A1D;border:1px solid var(--line);color:var(--lime);transition:background .3s,color .3s}
+.ends span.on{background:var(--lime);color:#111}
+.exn{display:grid;gap:10px;margin-top:16px}
+.exn .cd{padding:16px 18px;display:flex;gap:14px;align-items:center;text-align:left}
+.exn p{font-size:14.5px;color:var(--ink2)}
+.exn p b{color:#fff}
+
+/* ---------- STACK (before noun) ---------- */
+.stack{padding:26px 16px 22px;border-radius:28px}
+.sline{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:4px;row-gap:12px;min-height:120px}
+.sbox{display:flex;flex-direction:column;align-items:center;gap:8px}
+.sbox b{display:inline-block;font:400 clamp(21px,6.4vw,40px)/1 var(--fb);padding:12px clamp(8px,2.4vw,14px);border-radius:14px;background:#1C1C20;border:1px solid var(--line);color:#fff;white-space:nowrap}
+.sbox.k b{background:var(--limeg);color:#1D2205;border:0}
+.sbox.e b{background:var(--blueg);color:#fff;border:0}
+.sbox.n b,.sbox.ar b{background:transparent;border-style:dashed;color:var(--ink2)}
+.sbox small{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.sbox.gap{width:6px}
+.stru{text-align:center;margin-top:16px;font-size:16px;min-height:2.8em}
+.stru small{display:block;color:var(--mute);font-size:13.5px;margin-top:3px}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:14px;font-size:12.5px;color:var(--mute)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+
+/* ---------- SOFT ---------- */
+.soft{padding:26px 18px;border-radius:28px}
+.strack{position:relative;height:120px;margin:26px 8px 0}
+.strack .rail{position:absolute;left:0;right:0;top:64px;height:6px;border-radius:6px;background:linear-gradient(90deg,#3BB2EC,#8C6CF7 50%,#E3F65A)}
+.strack .end{position:absolute;top:84px;font-size:13px;color:var(--ink2);text-align:center;translate:-50% 0;white-space:nowrap}
+.strack .end b{display:block;font:500 16px/1.2 var(--fb);color:#fff}
+.strack .tick{position:absolute;top:58px;width:2px;height:18px;background:rgba(255,255,255,.4);translate:-1px 0}
+.smark{position:absolute;top:0;left:0;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.smark b{padding:9px 14px;border-radius:999px;background:#fff;color:#111;font:600 15px/1 var(--fb);white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.smark i{width:16px;height:16px;border-radius:50%;background:#111;border:4px solid #fff}
+.smark .q{position:absolute;right:-18px;top:-14px;font:800 20px/1 var(--fd);color:var(--lime);opacity:0;scale:.3;transition:opacity .3s,scale .5s cubic-bezier(.2,1.8,.4,1)}
+.smark.q .q{opacity:1;scale:1}
+.scap{text-align:center;color:var(--ink2);font-size:15.5px;margin-top:20px;min-height:3em}
+.scap b{color:#fff}
+
+/* ---------- NOUNS ---------- */
+.ngrid{display:grid;grid-template-columns:1fr;gap:10px}
+.nc{padding:18px;display:flex;align-items:center;gap:14px;border-radius:18px}
+.nc .lt{font:300 34px/1 var(--fb);color:var(--lime);width:46px;height:46px;flex:none;border-radius:12px;background:#202024;display:grid;place-items:center}
+.nc p{flex:1;font-size:15px;line-height:1.35}
+.nc p .flip{font-weight:600;color:#fff;font-size:17px}
+.nc p small{display:block;color:var(--mute);font-size:13.5px;margin-top:3px}
+.formula{margin-top:16px;padding:22px 20px;border-radius:24px}
+.fml{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0 6px}
+.fml span{padding:9px 12px;border-radius:10px;background:#202024;font:500 14px/1 var(--fb)}
+.fml span.k{background:var(--limeg);color:#1D2205}
+.fml span.b{background:var(--blueg);color:#fff}
+.fml em{font-style:normal;color:var(--dim)}
+.formula h4{margin:0;font:600 18px/1.25 var(--fb)}
+@media (min-width:700px){.ngrid{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.ngrid{grid-template-columns:1fr 1fr 1fr}}
+
+/* ---------- EXCEPTIONS bento ---------- */
+.bento{display:grid;gap:12px}
+.bx{position:relative;padding:24px 22px;border-radius:24px;min-height:200px;overflow:hidden}
+.bx h4{position:relative;z-index:2;margin:0;font:800 clamp(22px,6.6vw,32px)/1.02 var(--fd);text-transform:uppercase;letter-spacing:-.01em}
+.bx p{position:relative;z-index:2;margin-top:10px;font-size:14px;line-height:1.45;color:rgba(255,255,255,.82);max-width:22ch}
+.bx.dk p{color:var(--mute)}
+.xf{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.xf span{padding:10px 14px;border-radius:12px;font:500 17px/1 var(--fb);background:rgba(0,0,0,.22);transition:background .35s,color .35s,scale .4s cubic-bezier(.2,1.8,.4,1)}
+.bx.dk .xf span{background:#202024}
+.xf span.on{background:#fff;color:#111;scale:1.06}
+.bx.dk .xf span.on{background:var(--lime);color:#111}
+.xf .ar3{padding:0;background:none!important;color:rgba(255,255,255,.4);font-size:14px}
+.bx .say{position:absolute;z-index:3;right:16px;top:16px}
+.bx.blue .say{background:rgba(0,0,0,.2);color:#fff}
+.flt{position:absolute;z-index:1;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);color:#fff}
+.flt .ic{stroke-width:2.2}
+.ldot{position:absolute;z-index:1;width:16px;height:16px;border-radius:50%;background:var(--lime);box-shadow:0 0 20px rgba(227,246,90,.7)}
+.gear{position:absolute;z-index:1;right:-36px;bottom:-40px;width:150px;height:150px;color:var(--lime)}
+.eqz{position:absolute;z-index:1;right:18px;bottom:18px;display:flex;align-items:flex-end;gap:6px;height:80px}
+.eqz i{width:7px;border-radius:6px;background:linear-gradient(to top,rgba(43,164,224,.15),#3BB2EC);transform-origin:50% 100%}
+.keyp{position:absolute;z-index:1;right:-20px;bottom:-30px;width:150px;padding:14px;border-radius:20px;background:#0D0D0F;rotate:-12deg;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.keyp i{height:30px;border-radius:8px;background:#1B1B1E;font:400 13px/30px var(--fb);font-style:normal;text-align:center;color:#ccc}
+.keyp i.l{background:var(--lime)}
+.bx.chartx{min-height:240px}
+@media (min-width:700px){.bento{grid-template-columns:repeat(6,1fr)}.bx{grid-column:span 3}.bx.w2{grid-column:span 2}.bx.w4{grid-column:span 4}}
+
+/* ---------- QUIZ ---------- */
+.qz{position:relative;max-width:680px;margin:0 auto;padding:26px 20px 24px;border-radius:28px}
+.qbar{display:flex;gap:6px;margin-bottom:18px}
+.qbar i{flex:1;height:5px;border-radius:5px;background:#26262A;transition:background .3s}
+.qbar i.cur{background:#fff}.qbar i.ok{background:var(--lime)}.qbar i.bad{background:var(--red)}
+.qn{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.qq{font:400 clamp(21px,6vw,28px)/1.3 var(--fb);margin-top:10px}
+.qq u{text-decoration:none;color:var(--lime);border-bottom:2px dashed var(--lime)}
+.qo{display:grid;gap:8px;margin-top:18px}
+.qo button{text-align:left;padding:16px 18px;border-radius:14px;background:#1A1A1D;border:1px solid var(--line);font:500 17px/1.2 var(--fb);transition:background .2s,border-color .2s}
+.qo button:hover:not(:disabled){border-color:var(--vio2)}
+.qo button.ok{background:var(--lime);color:#111;border-color:var(--lime)}
+.qo button.bad{background:rgba(255,92,100,.15);border-color:var(--red);color:#fff}
+.qo button:disabled{cursor:default}
+.qx{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:14px;background:#141416;border:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.qx .ic{color:var(--lime);font-size:20px;margin-top:1px}
+.qx.bad .ic{color:var(--red)}
+.qx b{color:#fff}
+.qnext{margin-top:16px}
+.qres{text-align:center;padding:10px 0}
+.score{font:300 clamp(80px,26vw,140px)/1 var(--fb);color:var(--lime);letter-spacing:-.04em}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+.conf{position:absolute;left:50%;top:40%;width:9px;height:14px;border-radius:2px;pointer-events:none;z-index:5}
+
+/* ---------- CHEAT ---------- */
+.cgrid{display:grid;gap:16px}
+.cpod{position:relative;min-height:340px;border-radius:28px;padding:20px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.cyls{position:relative;width:100%;max-width:420px;height:290px}
+.cy{position:absolute;bottom:var(--b);left:var(--l);width:var(--w);height:var(--h);}
+.cy .bd{position:absolute;left:0;right:0;top:calc(var(--w)*.17);bottom:0;background:linear-gradient(90deg,#0B0B0C,#222226 32%,#18181B 64%,#09090A);border-radius:0 0 10px 10px}
+.cy .tp{position:absolute;left:0;right:0;top:0;height:calc(var(--w)*.34);border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#2E2E33,#161618 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12);display:grid;place-items:center}
+.cy .tp .ic{color:var(--lime);width:28%;height:auto;stroke-width:2.6;filter:drop-shadow(0 0 12px rgba(227,246,90,.6))}
+.cy .nm{position:absolute;left:0;right:0;bottom:22px;text-align:center;font:300 clamp(18px,5.6vw,28px)/1 var(--fb);color:var(--lime);letter-spacing:.02em}
+.cy .nm small{display:block;font-size:9px;letter-spacing:.3em;color:var(--dim);margin-top:6px;text-transform:uppercase}
+.crow{display:grid;gap:10px}
+.cc{padding:20px;display:flex;gap:14px;align-items:flex-start;border-radius:20px}
+.cc h4{margin:0 0 4px;font:600 17px/1.2 var(--fb)}
+.cc p{color:var(--ink2);font-size:14.5px;line-height:1.45}
+.cc p .de{color:var(--lime);font-weight:500}
+.sheet{margin-top:16px;padding:8px 20px;border-radius:24px}
+.sr2{display:grid;grid-template-columns:1fr;gap:4px;padding:14px 0;border-top:1px solid var(--line)}
+.sr2:first-child{border:0}
+.sr2 dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.sr2 dd{margin:0;font-size:15.5px;color:var(--ink2)}
+.sr2 dd b{color:#fff;font-weight:600}
+@media (min-width:700px){.sr2{grid-template-columns:200px 1fr;align-items:baseline}}
+@media (min-width:900px){.cgrid{grid-template-columns:1fr 1fr;align-items:stretch}}
+
+/* ---------- FINAL (Dmitry layout) ---------- */
+.final{padding:30px 0 40px}
+.fin{position:relative;border-radius:30px;padding:30px 20px 34px;overflow:hidden;background:radial-gradient(90% 60% at 50% 100%,rgba(140,108,247,.16),transparent 70%),linear-gradient(180deg,#141416,#0B0B0C);border:1px solid var(--line)}
+.fin .bars{left:6px;opacity:.3}
+.fin .bars.r{left:auto;right:6px}
+.fhead{position:relative;z-index:2;display:flex;gap:12px;align-items:flex-start}
+.fhead .vt{margin-top:6px}
+.fgrid{position:relative;z-index:2;display:grid;gap:18px;margin-top:26px}
+.qrc{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.qrbox{position:relative;width:min(220px,62vw);aspect-ratio:1;padding:22px;border-radius:26px;background:#101012;border:1px solid var(--line2);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 30px 60px rgba(0,0,0,.5);overflow:hidden;color:var(--vio2)}
+.qrbox .qrs{display:block;width:100%;height:100%}
+.qrbox .qlogo{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:var(--vio);display:grid;place-items:center;color:#fff;box-shadow:0 0 0 6px #101012}
+.qrbox .scan{position:absolute;left:0;right:0;top:0;height:3px;background:var(--lime);box-shadow:0 0 18px var(--lime);opacity:.9}
+.qrc p{font-size:13.5px;color:var(--mute);max-width:22ch}
+.fphone{position:relative;justify-self:center;width:min(250px,66vw);aspect-ratio:9/17;border-radius:34px;padding:9px;background:#1A1A1D;border:1px solid var(--line2);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.fphone video,.fphone img{width:100%;height:100%;object-fit:cover;border-radius:26px;background:#000;display:block}
+.fphone .np{position:absolute;left:58%;bottom:-18px;white-space:nowrap}
+.fphone .cur{position:absolute;left:34%;bottom:6px}
+.fcards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fc{padding:20px 14px;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;border-radius:22px}
+.fc p{font-size:14px;line-height:1.3;color:#E9E9EC}
+.fc:nth-child(3){grid-column:1/-1;flex-direction:row;min-height:auto;justify-content:flex-start;text-align:left;padding:16px 18px}
+.fnote{grid-column:1/-1;padding:6px 6px 0;font-size:15px;color:var(--ink2);line-height:1.5}
+.fnote .ic{color:var(--lime);font-size:20px;display:block;margin-bottom:10px}
+.fnote a{color:#fff;border-bottom:1px solid var(--dim)}
+.fcta{position:relative;z-index:2;display:flex;justify-content:center;margin-top:30px}
+.fine{position:relative;z-index:2;text-align:center;color:var(--dim);font-size:12.5px;margin-top:18px;line-height:1.5}
+.fine a{color:var(--ink2);border-bottom:1px solid var(--dim)}
+@media (min-width:900px){
+  .fin{padding:60px 70px}
+  .fgrid{grid-template-columns:auto 1fr 1fr;align-items:center}
+  .fcards{grid-template-columns:1fr 1fr}
+  .fc:nth-child(3){grid-column:auto;flex-direction:column;justify-content:center;text-align:center;min-height:150px}
+  .bp{padding:24px 44px;font-size:18px}
+}
+
+.fpod{position:relative;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px 20px 34px;width:min(270px,72vw);border-radius:34px;background:linear-gradient(180deg,#1C1C20,#0F0F11);border:1px solid var(--line2);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.forb{width:160px;height:160px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--limeg);color:#1D2205;font:500 21px/1 var(--fb);box-shadow:0 0 70px rgba(227,246,90,.3)}
+.forb .ic{width:26px;height:26px;stroke-width:2.4}
+.fpod p{font-size:13px;color:var(--mute);text-align:center}
+.fpod .cur{position:absolute;left:26%;bottom:6px}
+
+/* ---------- PLATFORM (ad) ---------- */
+.pains{display:grid;gap:12px}
+.pain{padding:22px 20px;border-radius:24px}
+.pain small{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.pain h4{margin:14px 0 8px;font:800 clamp(21px,6vw,28px)/1.05 var(--fd);text-transform:uppercase}
+.pain p{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.5}
+.pain p+p{margin-top:8px}
+.pain.dk p{color:var(--ink2)}
+.pain.dk small{color:var(--dim)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.num{padding:18px 10px;text-align:center;border-radius:20px}
+.num b{display:block;font:300 clamp(28px,8.4vw,52px)/1 var(--fb);color:var(--lime);letter-spacing:-.03em}
+.num span{display:block;font-size:12px;color:var(--mute);margin-top:8px;line-height:1.3}
+.feat{display:grid;gap:10px;margin-top:22px}
+.ft{padding:18px;display:flex;gap:16px;align-items:flex-start;border-radius:20px}
+.ft h4{margin:0 0 4px;font:600 16.5px/1.25 var(--fb)}
+.ft p{color:var(--mute);font-size:14px;line-height:1.45}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:4px var(--gut) 14px;margin:20px calc(var(--gut)*-1) 0;scroll-snap-type:x mandatory;scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
+.shots figure{flex:0 0 78%;max-width:380px;margin:0;scroll-snap-align:start}
+.shots img{width:100%;border-radius:16px;border:1px solid var(--line2);display:block;background:#111}
+.shots figcaption{font-size:13px;color:var(--mute);margin-top:8px}
+.shots figcaption i{font-style:normal;color:var(--lime);margin-right:8px;font-weight:600}
+.frames{display:grid;gap:12px;margin-top:16px}
+.frame{border-radius:20px;overflow:hidden;background:#111113;border:1px solid var(--line2)}
+.frame .fbar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.frame .fbar i{width:9px;height:9px;border-radius:50%;background:#2A2A2E}
+.frame .fbar i:first-child{background:#FF5F57}.frame .fbar i:nth-child(2){background:#FEBC2E}.frame .fbar i:nth-child(3){background:#28C840}
+.frame video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#000}
+.frame p{padding:12px 14px;font-size:13.5px;color:var(--mute)}
+.frame p b{color:#fff}
+.revs{display:flex;gap:12px;overflow-x:auto;padding:4px var(--gut) 14px;margin:16px calc(var(--gut)*-1) 0;scrollbar-width:none;scroll-snap-type:x mandatory}
+.revs::-webkit-scrollbar{display:none}
+.revs img{flex:0 0 72%;max-width:330px;border-radius:16px;scroll-snap-align:start;border:1px solid var(--line2)}
+.prices{display:grid;gap:12px;margin-top:22px}
+.price{position:relative;display:block;padding:24px 22px;border-radius:24px;overflow:hidden;transition:translate .25s}
+.price:hover{translate:0 -4px}
+.price .pt{font:800 clamp(20px,6vw,26px)/1.05 var(--fd);text-transform:uppercase}
+.price .pt small{display:block;font:400 13.5px/1.3 var(--fb);text-transform:none;color:rgba(255,255,255,.7);margin-top:6px}
+.price.dk .pt small{color:var(--mute)}
+.price .pb{display:flex;align-items:baseline;gap:12px;margin-top:22px}
+.price .pb b{font:300 clamp(44px,13vw,64px)/1 var(--fb);letter-spacing:-.03em}
+.price .pb span{font-size:13px;color:rgba(255,255,255,.7)}
+.price.dk .pb span{color:var(--mute)}
+.price.best{background:var(--limeg);color:#1A1E04;border:0}
+.price.best .pt small,.price.best .pb span{color:rgba(26,30,4,.7)}
+.price.best ul{margin:14px 0 0;padding:0;list-style:none;font-size:14px}
+.price.best li{display:flex;gap:8px;align-items:center;margin-top:6px}
+.rib{position:absolute;right:16px;top:16px;padding:7px 12px;border-radius:999px;background:var(--vio);color:#fff;font:600 11px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase}
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-radius:18px;background:rgba(20,20,22,.96);border:1px solid var(--line2);box-shadow:0 20px 50px rgba(0,0,0,.6);translate:0 140%;transition:translate .45s cubic-bezier(.2,1,.3,1)}
+.dock.show{translate:0 0}
+.dock p{font-size:12.5px;color:var(--mute);line-height:1.25}
+.dock p b{display:block;font:500 20px/1 var(--fb);color:var(--lime)}
+.dock .bv{padding:14px 18px;font-size:15px}
+@media (min-width:700px){.pains{grid-template-columns:repeat(3,1fr)}.feat{grid-template-columns:1fr 1fr}.frames{grid-template-columns:repeat(3,1fr)}.prices{grid-template-columns:repeat(3,1fr)}.dock{left:50%;right:auto;width:440px;margin-left:-220px}}
+
+footer{padding:40px 0 110px;text-align:center;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-direction:column;gap:6px;align-items:center}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .pc .cyl{translate:0 0}
+}
+</style>
+
+</head>
+<body>
+
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="spk" viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></symbol>
+  <symbol id="gear" viewBox="0 0 100 100"><path fill="currentColor" d="M43 4h14l2 12a35 35 0 0 1 9 4l10-7 10 10-7 10a35 35 0 0 1 4 9l12 2v14l-12 2a35 35 0 0 1-4 9l7 10-10 10-10-7a35 35 0 0 1-9 4l-2 12H43l-2-12a35 35 0 0 1-9-4l-10 7-10-10 7-10a35 35 0 0 1-4-9L3 57V43l12-2a35 35 0 0 1 4-9l-7-10 10-10 10 7a35 35 0 0 1 9-4zm7 30a16 16 0 1 0 0 32 16 16 0 0 0 0-32z"/></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></symbol>
+<symbol id="i-chevrons-up" viewBox="0 0 24 24"><path d="m17 11-5-5-5 5"/><path d="m17 18-5-5-5 5"/></symbol>
+<symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></symbol>
+<symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+<symbol id="i-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+<symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-rotate-ccw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+<symbol id="i-ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+<symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+<symbol id="i-mouse-pointer-2" viewBox="0 0 24 24"><path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/></symbol>
+<symbol id="i-cog" viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></symbol>
+<symbol id="i-chart-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-thermometer" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+<symbol id="i-snowflake" viewBox="0 0 24 24"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+<symbol id="i-equal" viewBox="0 0 24 24"><line x1="5" x2="19" y1="9" y2="9"/><line x1="5" x2="19" y1="15" y2="15"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+<symbol id="i-building-2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
+<symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+<symbol id="i-qr-code" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+<symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+<symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+<symbol id="i-cat" viewBox="0 0 24 24"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/></symbol>
+<symbol id="i-dog" viewBox="0 0 24 24"><path d="M11.25 16.25h1.5L12 17z"/><path d="M16 14v.5"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"/><path d="M8 14v.5"/><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/></symbol>
+<symbol id="i-train" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><path d="M8 15h.01"/><path d="M16 15h.01"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></symbol>
+<symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></symbol>
+<symbol id="i-wand" viewBox="0 0 24 24"><path d="M15 4V2"/><path d="M15 16v-2"/><path d="M8 9h2"/><path d="M20 9h2"/><path d="M17.8 11.8 19 13"/><path d="M15 9h.01"/><path d="M17.8 6.2 19 5"/><path d="m3 21 9-9"/><path d="M12.2 6.2 11 5"/></symbol>
+<symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+<symbol id="i-thumbs-up" viewBox="0 0 24 24"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></symbol>
+
+</svg>
+
+<div class="bgfx" aria-hidden="true"><i class="coin" style="width:300px;height:300px;left:-120px;top:18%"></i><i class="coin" style="width:220px;height:220px;right:-80px;top:62%"></i></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../media/logo.webp" alt="" width="26" height="26"><span>Steigerung<small>Adjektive · A1–B1</small></span></a>
+    <nav class="tnav"><a href="#podium">Ступени</a><a href="#komparativ">Komparativ</a><a href="#superlativ">Superlativ</a><a href="#exceptions">Исключения</a><a href="#cheat">Шпаргалка</a></nav>
+    
+    <a class="tlink" href="#quiz"><svg class="ic"><use href="#i-trophy"/></svg> Тест</a>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hframe">
+      <div class="hnav"><nav><a href="#intro">О теме</a><a href="#podium">Пьедестал</a><a href="#exceptions">Исключения</a><a href="#quiz">Тест</a></nav><div class="soc"><a href="#cheat" aria-label="Шпаргалка"><svg class="ic"><use href="#i-file-text"/></svg></a><a href="#quiz" aria-label="Тест"><svg class="ic"><use href="#i-trophy"/></svg></a><a href="#cheat">Сохранить шпаргалку</a></div></div>
+      <div class="hgrid">
+        <div class="hrail" aria-hidden="true">
+          <span class="rb"><svg class="ic"><use href="#i-circle-dot"/></svg></span>
+          <span class="rb"><svg class="ic"><use href="#i-chevrons-up"/></svg></span>
+          <span class="rb"><svg class="ic"><use href="#i-crown"/></svg></span>
+        </div>
+        <div class="hmain">
+          <h1 class="wm" aria-label="Hoch. Steigerung der Adjektive"><span>H</span><span class="opill"><svg class="ic"><use href="#i-crown"/></svg></span><span>C</span><span>H</span></h1>
+          <div class="wm2" aria-hidden="true">Steigerung</div>
+          <p class="hlede">Сравнивать себя с другими вредно. <b>Сравнивать прилагательные полезно. Начнём со второго.</b></p>
+          <a class="bv big" href="#intro">Погнали разбираться <svg class="ic"><use href="#i-arrow-down"/></svg></a>
+        </div>
+        <div class="hside">
+          <div class="ten"><b>3</b><span class="vt">ступени</span></div>
+          <p>степени сравнения в немецком. Одна логика и пара наглых исключений.</p>
+          <div class="tagc"><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span><span><b>hoch → höher → am höchsten</b><small>Positiv · Komparativ · Superlativ</small></span></div>
+        </div>
+        <div class="hvis" id="hvis" aria-hidden="true">
+          <div class="bars" data-bars="16"></div>
+          <div class="stp s1" style="left:3%"><span class="lb">hoch<small>Positiv</small></span><i class="col" style="height:80px"></i></div>
+          <div class="stp s2" style="left:35%"><span class="lb">höher<small>Komparativ</small></span><i class="col" style="height:140px"></i></div>
+          <div class="stp s3" style="left:67%"><span class="lb">am höchsten<small>Superlativ</small></span><i class="col" style="height:200px"></i></div>
+          <svg class="hcur cur ic" id="hcur"><use href="#i-mouse-pointer-2"/></svg>
+        </div>
+      </div>
+      <div class="svcs">
+        <a class="svc cd" href="#podium"><h3>Positiv</h3><svg class="ic ar"><use href="#i-arrow-up-right"/></svg><p>Основа. Как в словаре. Ничего не делаем. Кайф.</p><span class="orb o1">klein</span></a>
+        <a class="svc cd" href="#komparativ"><h3>Komparativ</h3><svg class="ic ar"><use href="#i-arrow-up-right"/></svg><p>Плюс -er. И als, если сравниваем с кем-то.</p><span class="orb o2">kleiner</span></a>
+        <a class="svc cd" href="#superlativ"><h3>Superlativ</h3><svg class="ic ar"><use href="#i-arrow-up-right"/></svg><p>am + -sten. Или der, die, das + -ste.</p><span class="orb o3"><svg class="ic"><use href="#i-crown"/></svg>am kleinsten</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section id="intro" style="padding-top:40px">
+  <div class="wrap">
+    <div class="intro">
+      <div class="ibox cd">
+        <span class="eyb">Знакомство</span>
+        <h2 class="T">Три<br>ступеньки</h2>
+        <p class="lede">Большой. Больше. Самый большой. В русском три формы. В немецком тоже три. <b>Разница в паре деталей. На них все и сыпятся.</b></p>
+        <div class="facts">
+          <div class="fact rv"><span class="lq"><svg class="ic"><use href="#i-scale"/></svg></span><p><b>Только то, что бывает «более».</b> Быстрый, дорогой, вкусный. Деревянный стол «деревяннее» не станет. Ну, вы поняли.</p></div>
+          <div class="fact rv"><span class="lq"><svg class="ic"><use href="#i-layers"/></svg></span><p><b>Вторая и третья растут из первой.</b> Берёте словарную форму и навешиваете хвосты. Как конструктор, только без инструкции на китайском.</p></div>
+        </div>
+        <a class="more" href="#podium"><span>Смотреть на пьедестале</span><svg class="ic cur" style="width:26px;height:26px"><use href="#i-mouse-pointer-2"/></svg></a>
+      </div>
+      <div class="ladder cd" id="ladder">
+        <div class="bars" data-bars="9" aria-hidden="true"></div>
+        <div class="lr"><small>Positiv</small><span class="lw" id="l1">groß</span></div>
+        <div class="lr"><small>Komparativ</small><span class="lw" id="l2">größer</span></div>
+        <div class="lr"><small>Superlativ</small><span class="lw" id="l3">am größten</span></div>
+        <p class="lcap" id="lcap"><b>groß</b> — большой. ß проглатывает s: am größten, а не größsten.</p>
+      </div>
+    </div>
+
+    <div class="route">
+      <div class="rt">
+        <a href="#podium"><i>01</i>Пьедестал</a><a href="#komparativ"><i>02</i>+er и als</a><a href="#umlaut"><i>03</i>Умляут</a><a href="#edrop"><i>04</i>-el и -er</a><a href="#superlativ"><i>05</i>Superlativ</a><a href="#plus-e"><i>06</i>Вставная e</a><a href="#vor-nomen"><i>07</i>Перед сущ.</a><a href="#soft"><i>08</i>Мягкий Komparativ</a><a href="#nomen"><i>09</i>Превращения</a><a href="#exceptions"><i>10</i>Исключения</a><a href="#quiz"><i>11</i>Тест</a><a href="#cheat"><i>12</i>Шпаргалка</a>
+      </div>
+      <div class="rtl"><b id="rtFill"></b></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="track"><span>klein · kleiner · am kleinsten</span><span>gut · besser · am besten</span><span>alt · älter · am ältesten</span><span>viel · mehr · am meisten</span><span>klein · kleiner · am kleinsten</span><span>gut · besser · am besten</span><span>alt · älter · am ältesten</span><span>viel · mehr · am meisten</span></div></div>
+
+<!-- ================= 01 PODIUM ================= -->
+<section id="podium">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>01</b> Пьедестал</span><h2 class="H">Кто тут <em>выше всех?</em></h2></div>
+    <div class="podgrid">
+      <div class="pod cd">
+        <div class="chips" id="pchips">
+          <button class="chip on" data-a="klein">klein</button><button class="chip" data-a="schnell">schnell</button><button class="chip" data-a="alt">alt</button><button class="chip" data-a="warm">warm</button><button class="chip" data-a="gut">gut</button><button class="chip" data-a="viel">viel</button>
+        </div>
+        <div class="pstage" id="pstage">
+          <div class="pc on" data-at="1"><div class="pw" id="pw1">klein</div><div class="cyl" style="--h:36%;--rx:clamp(26px,8vw,52px)"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-circle-dot"/></svg></div><div class="lbl"><b>1</b>Positiv</div></div></div>
+          <div class="pc on" data-at="2"><div class="pw" id="pw2">kleiner</div><div class="cyl" style="--h:56%;--rx:clamp(26px,8vw,52px)"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-chevrons-up"/></svg></div><div class="lbl"><b>2</b>Komparativ</div></div></div>
+          <div class="pc on cr" data-at="3"><span class="crown"><svg class="ic"><use href="#i-crown"/></svg></span><div class="pw" id="pw3">am kleinsten</div><div class="cyl" style="--h:76%;--rx:clamp(26px,8vw,52px)"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-crown"/></svg></div><div class="lbl"><b>3</b>Superlativ</div></div></div>
+          <div class="pfloor"></div>
+        </div>
+        <div class="pctl">
+          <div class="pdots" id="pdots"><button data-s="1" aria-label="Шаг 1">1</button><button data-s="2" aria-label="Шаг 2">2</button><button data-s="3" class="on" aria-label="Шаг 3">3</button></div>
+          <button class="pplay" id="pplay" aria-label="Пауза"><svg class="ic"><use href="#i-pause"/></svg></button>
+        </div>
+        <p class="pcap" id="pcap"><b>Superlativ.</b> am спереди, -sten сзади. Корона ваша.</p>
+        <div class="pex" id="pex"></div>
+      </div>
+      <div class="ptri stg">
+        <div class="cd"><span class="blk"><svg class="ic"><use href="#i-circle-dot"/></svg></span><div><h4>Positiv</h4><p>Словарная форма. Описываем без сравнений: <span class="de">Das Haus ist groß.</span> Дом большой. Точка.</p></div></div>
+        <div class="cd"><span class="blk"><svg class="ic"><use href="#i-chevrons-up"/></svg></span><div><h4>Komparativ</h4><p>Основа + <span class="li">-er</span>. Сравниваем двоих: <span class="de">größer als</span> — больше, чем.</p></div></div>
+        <div class="cd"><span class="blk"><svg class="ic"><use href="#i-crown"/></svg></span><div><h4>Superlativ</h4><p><span class="li">am</span> + основа + <span class="li">-sten</span>. Самый-самый. Обычно с определённым артиклем или am. Корона одна, претендентов много.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 KOMPARATIV ================= -->
+<section id="komparativ">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>02</b> Komparativ</span><h2 class="H">Плюс <em>-er.</em> И всё</h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Серьёзно. Берёте основу, приклеиваете -er. Сравниваете с кем-то — добавляете als. <b>Это вся магия.</b></p><p>Можно расходиться. Шучу, там ещё умляуты))</p></div>
+    <div class="kgrid">
+      <div class="kp cd blue">
+        <h3>Калькулятор степеней</h3>
+        <p>Жмите слово, потом +er, потом =. Или просто смотрите, он сам умеет.</p>
+        <div class="calc">
+          <div class="disp"><small id="dform">основа + er</small><span class="dw" id="dw">schnell<span class="s">er</span></span><span class="dsent" id="dsent">Der Zug ist schneller als das Auto.</span></div>
+          <div class="keys" id="keys">
+            <button data-k="schnell">schnell</button><button data-k="neu">neu</button><button data-k="billig">billig</button>
+            <button data-k="lecker">lecker</button><button data-k="klar">klar</button><button data-k="laut">laut</button>
+            <button data-k="C" class="f">C</button><button data-k="+er" class="f">+er</button><button data-k="=" class="eq">=</button>
+          </div>
+        </div>
+      </div>
+      <div class="duel cd">
+        <h3>als или wie?</h3>
+        <p>Неравенство — <b class="li">als</b>. Равенство — <b>so … wie</b>. Путают все. Сейчас перестанете.</p>
+        <div class="dstage" id="dstage">
+          <div class="dcol" id="dL" style="--dh:90px"><div class="hs"><svg class="ic"><use href="#i-house"/></svg></div><small>deine Wohnung</small></div>
+          <span class="dmid" id="dmid">als</span>
+          <div class="dcol" id="dR" style="--dh:170px"><div class="hs"><svg class="ic"><use href="#i-house"/></svg></div><small>meine Wohnung</small></div>
+        </div>
+        <p class="dsent" id="dsent2"><span class="de">Deine Wohnung ist <b>kleiner als</b> meine.</span><small>Твоя квартира меньше, чем моя.</small></p>
+        <div class="dtog"><button class="chip on" data-d="als">kleiner als</button><button class="chip" data-d="wie">so klein wie</button><button class="say" data-say="Deine Wohnung ist kleiner als meine." id="dsay" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+        <div class="warn"><svg class="ic"><use href="#i-triangle-alert"/></svg><p><b>Не «größer wie».</b> В разговоре вы это услышите, особенно на юге. На экзамене это ошибка. После Komparativ пишем als.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 UMLAUT ================= -->
+<section id="umlaut">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>03</b> Умляут</span><h2 class="H">Точки <em>сверху</em></h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Короткие прилагательные с <b>a, o, u</b> в Komparativ получают две точки. Бесплатно. Без регистрации.</p><p>И в Superlativ эти точки остаются. Раз дали, обратно не забирают.</p></div>
+    <div class="ugrid">
+      <div class="cd p" id="uml">
+        <div class="utiles" aria-hidden="true">
+          <div class="ut">a<span class="dd"><b></b><b></b></span><small>A → Ä</small></div>
+          <div class="ut">o<span class="dd"><b></b><b></b></span><small>O → Ö</small></div>
+          <div class="ut">u<span class="dd"><b></b><b></b></span><small>U → Ü</small></div>
+        </div>
+        <div class="ulist" id="ulist">
+          <div class="uw" data-say="alt, älter, am ältesten"><span class="flip" data-from="alt" data-to="älter"></span><span class="ru">старый</span></div>
+          <div class="uw" data-say="groß, größer, am größten"><span class="flip" data-from="groß" data-to="größer"></span><span class="ru">большой</span></div>
+          <div class="uw" data-say="jung, jünger, am jüngsten"><span class="flip" data-from="jung" data-to="jünger"></span><span class="ru">молодой</span></div>
+          <div class="uw" data-say="kalt, kälter, am kältesten"><span class="flip" data-from="kalt" data-to="kälter"></span><span class="ru">холодный</span></div>
+          <div class="uw" data-say="lang, länger, am längsten"><span class="flip" data-from="lang" data-to="länger"></span><span class="ru">длинный</span></div>
+          <div class="uw" data-say="kurz, kürzer, am kürzesten"><span class="flip" data-from="kurz" data-to="kürzer"></span><span class="ru">короткий</span></div>
+          <div class="uw" data-say="warm, wärmer, am wärmsten"><span class="flip" data-from="warm" data-to="wärmer"></span><span class="ru">тёплый</span></div>
+          <div class="uw" data-say="dumm, dümmer, am dümmsten"><span class="flip" data-from="dumm" data-to="dümmer"></span><span class="ru">глупый</span></div>
+          <div class="uw" data-say="stark, stärker, am stärksten"><span class="flip" data-from="stark" data-to="stärker"></span><span class="ru">сильный</span></div>
+          <div class="uw" data-say="arm, ärmer, am ärmsten"><span class="flip" data-from="arm" data-to="ärmer"></span><span class="ru">бедный</span></div>
+        </div>
+      </div>
+      <div class="nodots cd rv">
+        <h4><svg class="ic"><use href="#i-x"/></svg> Не все хотят точки</h4>
+        <p>Эти короткие обходятся без умляута. Им и так нормально. Запоминаем в лицо:</p>
+        <div class="chips">
+          <button class="chip" data-say="klar, klarer, am klarsten">klar → klarer</button>
+          <button class="chip" data-say="laut, lauter, am lautesten">laut → lauter</button>
+          <button class="chip" data-say="stolz, stolzer, am stolzesten">stolz → stolzer</button>
+          <button class="chip" data-say="faul, fauler, am faulsten">faul → fauler</button>
+          <button class="chip" data-say="froh, froher, am frohesten">froh → froher</button>
+          <button class="chip" data-say="rund, runder, am rundesten">rund → runder</button>
+        </div>
+        <p style="margin-top:16px">А <span class="de">gesund</span> можно и так, и так: <span class="de">gesünder</span> и <span class="de">gesunder</span>. Немецкий иногда добрый. Редко, но бывает.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band dk" aria-hidden="true"><div class="track"><span>а → ä</span><span>o → ö</span><span>u → ü</span><span>alt → älter</span><span>jung → jünger</span><span>а → ä</span><span>o → ö</span><span>u → ü</span><span>alt → älter</span><span>jung → jünger</span></div></div>
+
+<!-- ================= 04 E DROP ================= -->
+<section id="edrop">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>04</b> -el и -er</span><h2 class="H">Буква <em>e</em> уходит. Ненадолго</h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Прилагательные на <b>-el</b> и <b>-er</b> в Komparativ теряют e. Иначе получается «dunkeler». Язык спотыкается, ухо страдает.</p><p>В Superlativ e возвращается. Драма в двух актах.</p></div>
+    <div class="edrop cd" id="ed">
+      <div class="erow" id="erow" aria-live="polite">dunkler</div>
+      <span class="ebin" id="ebin" aria-hidden="true"><svg class="ic"><use href="#i-trash-2"/></svg></span>
+      <p class="ecap" id="ecap"><b>dunkel → dunkler.</b> e вылетела, -er прилетело.</p>
+      <div class="erows2" id="erows2">
+        <div class="e2 hd"><span>Positiv</span><span>Komparativ</span><span>Superlativ</span></div>
+        <div class="e2" data-say="dunkel, dunkler, am dunkelsten"><span class="de">dunk<s>e</s>l</span><span class="de">dunkl<i>er</i></span><span class="de">am dunk<i>e</i>lsten</span></div>
+        <div class="e2" data-say="teuer, teurer, am teuersten"><span class="de">teu<s>e</s>r</span><span class="de">teur<i>er</i></span><span class="de">am teu<i>e</i>rsten</span></div>
+        <div class="e2" data-say="sauer, saurer, am sauersten"><span class="de">sau<s>e</s>r</span><span class="de">saur<i>er</i></span><span class="de">am sau<i>e</i>rsten</span></div>
+        <div class="e2" data-say="edel, edler, am edelsten"><span class="de">ed<s>e</s>l</span><span class="de">edl<i>er</i></span><span class="de">am ed<i>e</i>lsten</span></div>
+      </div>
+      <div class="ex" style="margin-top:12px"><p><span class="de">Es wird dunkler.</span><small>Темнеет. Буквально «становится темнее».</small></p><button class="say" data-say="Es wird dunkler." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><p><span class="de">Der Mantel ist teurer als die Jacke.</span><small>Пальто дороже куртки. Как всегда.</small></p><button class="say" data-say="Der Mantel ist teurer als die Jacke." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><p>А на <span class="de">-en</span> e обычно остаётся: <span class="de">trocken → trockener</span>.<small>Не всё же терять.</small></p><button class="say" data-say="trocken, trockener, am trockensten" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 SUPERLATIV ================= -->
+<section id="superlativ">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>05</b> Superlativ</span><h2 class="H">Две дороги <em>на вершину</em></h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Самый-самый в немецком бывает в двух видах. Какой брать, решает один вопрос.</p><p><b>Стоит ли прилагательное прямо перед существительным?</b></p></div>
+    <div class="sgrid">
+      <div class="flow cd" id="flow">
+        <div class="fphr" id="fphr">Im Juli ist es <i>___ (warm)</i>.</div>
+        <div class="fq" id="fq">Прилагательное стоит перед существительным?<small>Сразу перед ним, как определение</small></div>
+        <div class="fbr">
+          <div class="fo" id="fo0"><span class="yn">Нет</span><b>am <i>…sten</i></b><small>после sein, werden или глагола</small></div>
+          <div class="fo" id="fo1"><span class="yn">Да</span><b>der <i>…ste</i></b><small>артикль + -ste + окончание по падежу</small></div>
+        </div>
+        <p class="fres" id="fres"><span class="de">Im Juli ist es <b>am wärmsten</b>.</span><small>В июле теплее всего.</small></p>
+      </div>
+      <div class="chart cd" id="chartA">
+        <h4>Без артикля тоже бывает</h4>
+        <p>Когда это не «единственный в мире», а просто «очень, топ». Как ✨лучшие✨ курсы в рекламе.</p>
+        <div class="ex" style="margin-top:12px;border:0;padding:0"><p><span class="de">Die Firma hat modernste Maschinen.</span><small>У фирмы самые современные станки.</small></p><button class="say" data-say="Die Firma hat modernste Maschinen." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+        <svg class="ln" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path id="lnPath" d="M0 110 C 40 112, 60 70, 100 78 S 160 96, 190 60 S 250 20, 300 4" fill="none" stroke="#E3F65A" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+        <span class="pill" id="lnPill" style="right:22px;bottom:96px">am besten</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 PLUS E ================= -->
+<section id="plus-e">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>06</b> Вставная e</span><h2 class="H">Попробуйте <em>выговорить</em></h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Основа кончается на <b>-t, -d, -s, -ß, -sch, -z, -x</b>? Перед -sten вставляем e.</p><p>Учить специально не надо. Без e вы это физически не скажете. Проверено.</p></div>
+    <div class="eins cd" id="eins">
+      <div class="einw" aria-live="polite"><span class="am">am</span><span class="clu" id="eStem">kält</span><span class="ins on" id="eIns">e</span><span class="sf" id="eSf">sten</span></div>
+      <p class="ecap2" id="ecap2"><b>kalt → am kältesten.</b> Холоднее всего. С e язык не ломается.</p>
+      <div class="ends" id="ends"><span data-e="t">-t</span><span data-e="d">-d</span><span data-e="s">-s</span><span data-e="ß">-ß</span><span data-e="sch">-sch</span><span data-e="z">-z</span><span data-e="x">-x</span></div>
+      <div class="ex" style="margin-top:16px;text-align:left"><p><span class="de">Der kälteste Januar seit zehn Jahren.</span><small>Самый холодный январь за десять лет.</small></p><button class="say" data-say="Der kälteste Januar seit zehn Jahren." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex" style="text-align:left"><p><span class="de">Der kürzeste Weg ist nicht immer der beste.</span><small>Самый короткий путь не всегда лучший. Навигатор, слышишь?</small></p><button class="say" data-say="Der kürzeste Weg ist nicht immer der beste." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="exn">
+        <div class="cd"><span class="rb"><svg class="ic"><use href="#i-crown"/></svg></span><p><b>groß → am größten.</b> Без e. Потому что может. ß и так шипит за двоих.</p></div>
+        <div class="cd"><span class="rb"><svg class="ic"><use href="#i-sparkles"/></svg></span><p><b>neu → am neuesten.</b> Можно и am neusten. После гласной e по желанию.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 VOR NOMEN ================= -->
+<section id="vor-nomen">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>07</b> Перед существительным</span><h2 class="H">Двойное <em>-er.</em> Не опечатка</h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Перед существительным Komparativ и Superlativ ведут себя как обычные прилагательные. Берут окончания по падежу, по тем же правилам.</p><p>Отсюда <b>billigerer</b>. Выглядит как баг. Работает как фича.</p></div>
+    <div class="stack cd" id="stack">
+      <div class="sline" id="sline" aria-live="polite"><span class="sbox ar"><b>ein</b><small>артикль</small></span><span class="sbox"><b>billig</b><small>основа</small></span><span class="sbox k"><b>er</b><small>степень</small></span><span class="sbox e"><b>er</b><small>окончание</small></span><span class="sbox n"><b>Wagen</b><small>сущ.</small></span></div>
+      <p class="stru" id="stru"><span class="de">ein billigerer Wagen</span><small>более дешёвая машина</small></p>
+      <div class="legend"><span><i style="background:var(--lime)"></i>степень: -er или -st</span><span><i style="background:var(--blue)"></i>окончание по падежу</span></div>
+      <div class="cta-row" style="margin-top:14px"><button class="bo" id="snext" type="button">Следующий пример <svg class="ic"><use href="#i-arrow-right"/></svg></button><button class="say" id="ssay" data-say="ein billigerer Wagen" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 SOFT ================= -->
+<section id="soft">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>08</b> Мягкий Komparativ</span><h2 class="H">Пожилая <em>моложе</em> старой</h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Да, это законно. Иногда Komparativ ничего не сравнивает. Он смягчает.</p><p><b>eine ältere Frau</b> — не «старше старой», а «пожилая». Немецкий троллит. Живите с этим.</p></div>
+    <div class="soft cd" id="softc">
+      <div class="chips" id="schips"><button class="chip on" data-i="0">ältere Frau</button><button class="chip" data-i="1">kleinere Stadt</button><button class="chip" data-i="2">längere Zeit</button></div>
+      <div class="strack" id="strack">
+        <div class="rail"></div>
+        <span class="tick" style="left:0"></span><span class="tick" style="left:100%"></span>
+        <span class="end" id="sL" style="left:0"><b>jung</b>молодая</span>
+        <span class="end" id="sR" style="left:100%"><b>alt</b>старая</span>
+        <div class="smark" id="smark" style="left:62%"><b id="smw">ältere</b><i></i><span class="q">?!</span></div>
+      </div>
+      <p class="scap" id="scap"><b>eine ältere Frau</b> — пожилая. Моложе, чем «eine alte Frau». Да, «старше» оказалась моложе «старой».</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 NOMEN ================= -->
+<section id="nomen">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>09</b> Превращения</span><h2 class="H">Был признаком, <em>стал именем</em></h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Степени умеют становиться существительными. Тогда пишутся с большой буквы. Немецкий же. Тут всё важное с большой.</p></div>
+    <div class="ngrid stg" id="ngrid">
+      <div class="nc cd" data-say="Das ist das Schönste, was es gibt."><span class="lt">S</span><p><span class="flip" data-from="das schönste" data-to="das Schönste"></span><small>самое прекрасное. Das ist das Schönste, was es gibt.</small></p></div>
+      <div class="nc cd" data-say="Unser Ältester arbeitet bei der Bank."><span class="lt">Ä</span><p><span class="flip" data-from="unser ältester" data-to="unser Ältester"></span><small>наш старший (сын). Работает в банке, гордость семьи.</small></p></div>
+      <div class="nc cd" data-say="Wer ist der Nächste?"><span class="lt">N</span><p><span class="flip" data-from="der nächste" data-to="der Nächste"></span><small>следующий. Wer ist der Nächste? Классика очереди к врачу.</small></p></div>
+      <div class="nc cd" data-say="Der Klügere gibt nach."><span class="lt">K</span><p><span class="flip" data-from="der klügere" data-to="der Klügere"></span><small>умный уступает. Пословица, которой немцы оправдывают, что не стали спорить.</small></p></div>
+      <div class="nc cd" data-say="Haben Sie nicht etwas Billigeres?"><span class="lt">B</span><p><span class="flip" data-from="etwas billigeres" data-to="etwas Billigeres"></span><small>что-нибудь подешевле? Самая полезная фраза в магазине.</small></p></div>
+      <div class="nc cd" data-say="Es gibt nichts Interessanteres als Fußball."><span class="lt">I</span><p><span class="flip" data-from="nichts interessanteres" data-to="nichts Interessanteres"></span><small>ничего интереснее футбола. Так говорят фанаты. Спорно.</small></p></div>
+    </div>
+    <div class="formula cd rv">
+      <h4>«Один из лучших». Когда вы не самый-самый, но в топе</h4>
+      <div class="fml"><span>einer / eine / eines</span><em>+</em><span>der</span><em>+</em><span class="k">best-en</span><em>+</em><span class="b">сущ. во мн. ч.</span></div>
+      <div class="ex"><p><span class="de">Das ist einer der besten Momente meines Lebens.</span><small>Это один из лучших моментов моей жизни.</small></p><button class="say" data-say="Das ist einer der besten Momente meines Lebens." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+      <div class="ex"><p><span class="de">Wien ist eine der schönsten Städte Europas.</span><small>Вена — один из самых красивых городов Европы.</small></p><button class="say" data-say="Wien ist eine der schönsten Städte Europas." aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 EXCEPTIONS ================= -->
+<section id="exceptions">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>10</b> Исключения</span><h2 class="H">Наглые <em>исключения</em></h2></div>
+    <div class="copy" style="margin:-8px auto 30px"><p>Их немного. Зато они самые частые в речи, так что учим. Без вариантов))</p></div>
+    <div class="bento" id="bento">
+      <div class="bx blue w4" data-say="gut, besser, am besten">
+        <h4>Хорошо → лучше</h4>
+        <p>Ни одной общей буквы. Как бывший, который сменил имя, город и номер телефона.</p>
+        <div class="xf"><span>gut</span><b class="ar3">→</b><span>besser</span><b class="ar3">→</b><span>am besten</span></div>
+        <button class="say" data-say="gut, besser, am besten" aria-label="Послушать"><svg><use href="#spk"/></svg></button>
+        <span class="flt" style="width:56px;height:56px;right:5%;top:30%"><svg class="ic" style="font-size:24px"><use href="#i-thumbs-up"/></svg></span>
+        <span class="flt" style="width:44px;height:44px;right:12%;top:58%"><svg class="ic" style="font-size:18px"><use href="#i-star"/></svg></span>
+        <span class="flt" style="width:70px;height:70px;right:24%;bottom:-14px"><svg class="ic" style="font-size:28px"><use href="#i-sparkles"/></svg></span>
+        <i class="ldot" style="right:26%;top:48%"></i>
+      </div>
+      <div class="bx cd dk w2" data-say="viel, mehr, am meisten">
+        <h4>Много → больше</h4>
+        <p>И mehr не склоняется. Никогда. mehr Zeit, mehr Geld.</p>
+        <div class="xf"><span>viel</span><b class="ar3">→</b><span>mehr</span><b class="ar3">→</b><span>am meisten</span></div>
+        <div class="eqz" aria-hidden="true"><i style="height:30%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:70%"></i></div>
+      </div>
+      <div class="bx cd dk w2 chartx" id="chartB" data-say="hoch, höher, am höchsten">
+        <h4>Высоко → выше</h4>
+        <p>Буква c сбегает в Komparativ. Возвращается в Superlativ.</p>
+        <div class="xf"><span>hoch</span><b class="ar3">→</b><span>höher</span><b class="ar3">→</b><span>am höchsten</span></div>
+        <svg class="ln" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true" style="height:42%"><path id="lnPath2" d="M0 116 C 60 116, 90 92, 130 80 S 210 70, 240 40 S 280 10, 300 6" fill="none" stroke="#E3F65A" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+      </div>
+      <div class="bx cd dk w4" data-say="gern, lieber, am liebsten">
+        <h4>Охотно → охотнее</h4>
+        <p>Любимое исключение всех, кто что-то любит. <span class="de">Ich trinke lieber Tee. Am liebsten schlafe ich.</span></p>
+        <div class="xf"><span>gern</span><b class="ar3">→</b><span>lieber</span><b class="ar3">→</b><span>am liebsten</span></div>
+        <span class="flt" style="width:60px;height:60px;right:8%;top:22%;color:var(--lime);background:rgba(227,246,90,.08)"><svg class="ic" style="font-size:26px"><use href="#i-heart"/></svg></span>
+        <span class="flt" style="width:40px;height:40px;right:26%;bottom:18%;color:var(--lime);background:rgba(227,246,90,.08)"><svg class="ic" style="font-size:16px"><use href="#i-coffee"/></svg></span>
+      </div>
+      <div class="bx blue w3" data-say="nah, näher, am nächsten">
+        <h4>Близко → ближе</h4>
+        <p>Откуда-то появляется ch. Никто не знает откуда. Просто принимаем.</p>
+        <div class="xf"><span>nah</span><b class="ar3">→</b><span>näher</span><b class="ar3">→</b><span>am nächsten</span></div>
+        <div class="keyp" aria-hidden="true"><i>7</i><i>8</i><i>9</i><i>4</i><i>5</i><i>6</i><i>1</i><i>2</i><i class="l"></i></div>
+      </div>
+      <div class="bx cd dk w3" data-say="bald, eher, am ehesten">
+        <h4>Скоро → скорее</h4>
+        <p><span class="de">Am ehesten</span> — «скорее всего». Когда гадаете на кофейной гуще.</p>
+        <div class="xf"><span>bald</span><b class="ar3">→</b><span>eher</span><b class="ar3">→</b><span>am ehesten</span></div>
+        <svg class="gear" aria-hidden="true"><use href="#gear"/></svg>
+      </div>
+      <div class="bx cd dk w3" data-say="wenig, weniger, am wenigsten">
+        <h4>Мало → меньше</h4>
+        <p>Тут всё по правилам. Книжный вариант minder, am mindesten вы встретите разве что в старом романе.</p>
+        <div class="xf"><span>wenig</span><b class="ar3">→</b><span>weniger</span><b class="ar3">→</b><span>am wenigsten</span></div>
+      </div>
+      <div class="bx blue w3" data-say="oft, öfter, am häufigsten">
+        <h4>Часто → чаще</h4>
+        <p>В Superlativ oft одалживает форму у häufig. am öftesten тоже говорят, но реже.</p>
+        <div class="xf"><span>oft</span><b class="ar3">→</b><span>öfter</span><b class="ar3">→</b><span>am häufigsten</span></div>
+        <i class="ldot" style="right:14%;top:22%"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 QUIZ ================= -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>11</b> Тест</span><h2 class="H">Шесть вопросов. <em>Проверим</em></h2></div>
+    <div class="qz cd" id="qz"></div>
+  </div>
+</section>
+
+<!-- ================= 12 CHEAT ================= -->
+<section id="cheat">
+  <div class="wrap">
+    <div class="shd"><span class="eyb"><b>12</b> Шпаргалка</span><h2 class="H">Всё на <em>одном пьедестале</em></h2></div>
+    <div class="cgrid">
+      <div class="cpod cd" id="cpod">
+        <div class="bars" data-bars="10" style="right:10px;opacity:.5" aria-hidden="true"></div>
+        <div class="cyls" aria-hidden="true">
+          <div class="cy" style="--w:32%;--h:52%;--l:2%;--b:0"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-circle-dot"/></svg></div><div class="nm">klein<small>Positiv</small></div></div>
+          <div class="cy" style="--w:32%;--h:96%;--l:34%;--b:0"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-crown"/></svg></div><div class="nm">am kleinsten<small>Superlativ</small></div></div>
+          <div class="cy" style="--w:32%;--h:72%;--l:66%;--b:0"><div class="bd"></div><div class="tp"><svg class="ic"><use href="#i-chevrons-up"/></svg></div><div class="nm">kleiner<small>Komparativ</small></div></div>
+        </div>
+      </div>
+      <div class="crow stg">
+        <div class="cc cd"><span class="rb"><svg class="ic"><use href="#i-circle-dot"/></svg></span><div><h4>Positiv</h4><p>Как в словаре. <span class="de">klein</span></p></div></div>
+        <div class="cc cd"><span class="rb"><svg class="ic"><use href="#i-chevrons-up"/></svg></span><div><h4>Komparativ</h4><p>+er, сравнение через als. <span class="de">kleiner als</span></p></div></div>
+        <div class="cc cd"><span class="rb"><svg class="ic"><use href="#i-crown"/></svg></span><div><h4>Superlativ</h4><p>am …sten или der/die/das …ste. <span class="de">am kleinsten, der kleinste</span></p></div></div>
+      </div>
+    </div>
+    <dl class="sheet cd rv">
+      <div class="sr2"><dt>Умляут</dt><dd>Короткие с a, o, u: <b>alt → älter → am ältesten</b>. Кроме klar, laut, stolz, faul, froh, rund.</dd></div>
+      <div class="sr2"><dt>-el / -er</dt><dd>e выпадает в Komparativ: <b>dunkler, teurer</b>. В Superlativ возвращается: am dunkelsten.</dd></div>
+      <div class="sr2"><dt>Вставная e</dt><dd>-t, -d, -s, -ß, -sch, -z, -x: <b>am kältesten, am kürzesten</b>. Кроме am größten.</dd></div>
+      <div class="sr2"><dt>Перед сущ.</dt><dd>Степень + обычное окончание: <b>ein kleineres Haus, die längsten Haare</b>.</dd></div>
+      <div class="sr2"><dt>als / wie</dt><dd><b>größer als</b> — больше, чем. <b>so groß wie</b> — такой же, как.</dd></div>
+      <div class="sr2"><dt>Мягкий</dt><dd><b>eine ältere Frau</b> — пожилая. <b>eine kleinere Stadt</b> — небольшой город.</dd></div>
+      <div class="sr2"><dt>Исключения</dt><dd><b>gut – besser – am besten · viel – mehr – am meisten · gern – lieber – am liebsten · hoch – höher – am höchsten · nah – näher – am nächsten · bald – eher – am ehesten</b></dd></div>
+    </dl>
+  </div>
+</section>
+
+
+<!-- ================= FINAL (no ad) ================= -->
+<section class="final" id="final">
+  <div class="wrap">
+    <div class="fin">
+      <div class="bars" data-bars="5" aria-hidden="true"></div><div class="bars r" data-bars="5" aria-hidden="true"></div>
+      <div class="fhead"><h2 class="G">Хотите запомнить <em>навсегда?</em></h2><span class="vt">#komparativ<br>#superlativ</span></div>
+      <div class="fgrid">
+        <div class="qrc">
+          <div class="qrbox"><svg class="qrs" viewBox="0 0 33 33" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h1v1h-1zM12 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM19 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM17 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM23 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM14 5h1v1h-1zM18 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM1 11h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM16 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM30 11h1v1h-1zM32 11h1v1h-1zM1 12h1v1h-1zM3 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM0 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM15 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM26 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM13 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM20 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM31 14h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM8 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM15 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM2 16h1v1h-1zM6 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM32 16h1v1h-1zM2 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM2 18h1v1h-1zM6 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM31 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM26 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM3 24h1v1h-1zM6 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM10 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM9 29h1v1h-1zM10 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM12 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM21 30h1v1h-1zM22 30h1v1h-1zM23 30h1v1h-1zM24 30h1v1h-1zM25 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM13 31h1v1h-1zM15 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM26 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM13 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM19 32h1v1h-1zM20 32h1v1h-1zM22 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM31 32h1v1h-1z"/></svg><span class="qlogo"><svg class="ic"><use href="#i-send"/></svg></span><i class="scan" id="scan"></i></div>
+          <p>сканируйте, чтобы отправить гайд другу</p>
+        </div>
+        <div class="fpod">
+          <span class="forb"><svg class="ic"><use href="#i-crown"/></svg>am besten</span>
+          <p>Это вы сейчас. Без преувеличений</p>
+          <span class="np">am besten</span>
+          <svg class="ic cur"><use href="#i-mouse-pointer-2"/></svg>
+        </div>
+        <div class="fcards">
+          <div class="fc cd"><span class="rb"><svg class="ic"><use href="#i-flame"/></svg></span><p>Скажите сегодня три фразы с -er</p></div>
+          <div class="fc cd"><span class="rb"><svg class="ic"><use href="#i-key-round"/></svg></span><p>Сохраните шпаргалку скрином</p></div>
+          <div class="fc cd"><span class="rb"><svg class="ic"><use href="#i-calendar-days"/></svg></span><p>Пройдите тест через три дня</p></div>
+          <div class="fnote"><svg class="ic"><use href="#i-send"/></svg>Повторение, а не зубрёжка. Через три дня мозгу кажется, что всё это было давно. Проверьте его. Он будет приятно удивлён. Или нет))</div>
+        </div>
+      </div>
+      <div class="fcta"><a class="bp" href="#quiz"><svg class="ic"><use href="#i-repeat"/></svg> Пройти тест ещё раз</a></div>
+      <p class="fine">Klein, kleiner, am kleinsten. Вы теперь больше, чем были утром. Ну, по немецкому.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+</main>
+<footer><div class="wrap"><span>Steigerung der Adjektive · stellas</span><span>klein — kleiner — am kleinsten</span></div></footer>
+
+
+
+<script>
+function xInit(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && window.ScrollTrigger ? window.gsap : null;
+  var AD = !!document.getElementById('platform');
+  if(G){ try{ G.registerPlugin(ScrollTrigger); window.SplitText && G.registerPlugin(SplitText); window.MotionPathPlugin && G.registerPlugin(MotionPathPlugin); }catch(e){ G = null; } }
+  if(G){ document.documentElement.classList.add('gs'); ScrollTrigger.config({ignoreMobileResize:true}); }
+  var MP = G && window.MotionPathPlugin, ST = G && window.SplitText, A = G && !reduce;
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function whenVisible(el, on, off, th){
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){ on(); return; }
+    new IntersectionObserver(function(es){ es.forEach(function(en){ en.isIntersecting ? on() : (off && off()); }); }, {threshold:th||.25}).observe(el);
+  }
+  function rel(el, box){ var a = el.getBoundingClientRect(), b = box.getBoundingClientRect(); return {x:a.left-b.left, y:a.top-b.top, w:a.width, h:a.height}; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  /* ---------- decorative chart bars ---------- */
+  $$('[data-bars]').forEach(function(el, k){
+    var n = +el.dataset.bars, h = '';
+    for(var i=0;i<n;i++){ var v = 30 + Math.round(Math.abs(Math.sin((i+1)*1.7 + k*2.3))*150 + (i%3)*14); h += '<i style="height:' + v + 'px"></i>'; }
+    el.innerHTML = h;
+  });
+
+  /* ---------- speech ---------- */
+  var tts = 'speechSynthesis' in window, deVoice = null;
+  if(!tts) document.documentElement.classList.add('no-tts');
+  function pickVoice(){ try{ var v = speechSynthesis.getVoices(); deVoice = v.find(function(x){ return /^de/i.test(x.lang); }) || null; }catch(e){} }
+  if(tts){ pickVoice(); try{ speechSynthesis.onvoiceschanged = pickVoice; }catch(e){} }
+  function say(text, btn){
+    if(!tts || !text) return;
+    try{
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text); u.lang = 'de-DE'; u.rate = .88; if(deVoice) u.voice = deVoice;
+      if(btn){ btn.classList.add('on'); u.onend = u.onerror = function(){ btn.classList.remove('on'); }; }
+      speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-say]');
+    if(!b) return;
+    say(b.dataset.say, b.classList.contains('say') ? b : null);
+    if(A && (b.classList.contains('uw') || b.classList.contains('chip') || b.classList.contains('nc') || b.classList.contains('e2') || b.classList.contains('bx'))) G.fromTo(b, {rotation:-2, y:-4}, {rotation:0, y:0, duration:.7, ease:'elastic.out(1.1,.35)'});
+  });
+
+  /* ---------- word markup: {a} umlaut, [er] suffix, <am > prefix, !word irregular ---------- */
+  function R(s){
+    if(s.indexOf('!') > -1){ return s.replace(/<([^>]*)>/g, '<span class="a">$1</span>').replace(/!(\S+)/, '<span class="irr">$1</span>'); }
+    var out = '', i = 0;
+    while(i < s.length){
+      var c = s[i];
+      if(c === '<'){ var j = s.indexOf('>', i); out += '<span class="a">' + s.slice(i+1, j) + '</span>'; i = j+1; }
+      else if(c === '['){ var k = s.indexOf(']', i); out += '<span class="s">' + s.slice(i+1, k) + '</span>'; i = k+1; }
+      else if(c === '{'){ out += '<span class="u ch">' + s[i+1] + '<i></i></span>'; i += 3; }
+      else { out += '<span class="ch">' + c + '</span>'; i++; }
+    }
+    return out;
+  }
+  function plain(s){ return s.replace(/[<>\[\]!]/g,'').replace(/\{(.)\}/g, function(_, v){ return ({a:'ä',o:'ö',u:'ü'})[v] || v; }); }
+
+  /* ---------- flip letters ---------- */
+  function buildFlip(el){
+    var a = el.dataset.from, b = el.dataset.to, n = Math.max(a.length, b.length), html = '';
+    for(var i=0;i<n;i++){ var x = a[i]||'​', y = b[i]||'​'; html += x===y ? '<span>'+x+'</span>' : '<span class="fl"><i class="fa">'+x+'</i><i class="fb">'+y+'</i></span>'; }
+    el.innerHTML = html;
+  }
+  $$('.flip[data-from]').forEach(buildFlip);
+  function loopFlip(host, flips, ms){
+    if(!flips.length) return;
+    if(reduce || !('IntersectionObserver' in window)){ flips.forEach(function(f){ f.classList.add('to'); }); return; }
+    var t = null, on = false;
+    function tick(){ on = !on; flips.forEach(function(f, i){ setTimeout(function(){ f.classList.toggle('to', on); }, i*110); }); }
+    whenVisible(host, function(){ if(!t){ tick(); t = setInterval(tick, ms||2200); } }, function(){ clearInterval(t); t = null; });
+  }
+
+  /* ---------- reveals ---------- */
+  $$('.stg').forEach(function(g){ Array.prototype.forEach.call(g.children, function(c,i){ c.style.setProperty('--i', i); }); });
+  if(A){
+    $$('.H,.T,.G').forEach(function(h){
+      var t = h;
+      if(ST){ try{ t = new SplitText(h, {type:'words', wordsClass:'wd'}).words; }catch(e){} }
+      G.from(t, {yPercent:60, rotation:4, transformOrigin:'0% 100%', duration:.85, ease:'back.out(1.6)', stagger:.05, scrollTrigger:{trigger:h, start:'top 88%', once:true}});
+    });
+    G.set('.rv', {y:44});
+    ScrollTrigger.batch('.rv', {start:'top 94%', once:true, onEnter:function(b){ G.to(b, {y:0, duration:.9, ease:'power3.out', stagger:.08}); }});
+    $$('.stg').forEach(function(g){
+      G.from(g.children, {y:40, scale:.94, duration:.7, ease:'back.out(1.6)', stagger:.07, scrollTrigger:{trigger:g, start:'top 90%', once:true}});
+    });
+    ScrollTrigger.batch('.eyb', {start:'top 92%', once:true, onEnter:function(b){ G.from(b, {y:20, scale:.8, duration:.6, ease:'back.out(2.4)', stagger:.06}); }});
+    ScrollTrigger.batch('.rb, .lq, .blk', {start:'top 92%', once:true, onEnter:function(b){ G.from(b, {scale:.3, rotation:-90, duration:.8, ease:'back.out(2.4)', stagger:.06}); }});
+    $$('.bars').forEach(function(bs){ G.from(bs.children, {scaleY:.3, duration:1.1, ease:'back.out(1.4)', stagger:.04, scrollTrigger:{trigger:bs.parentNode, start:'top 85%', once:true}}); });
+  } else if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {rootMargin:'0px 0px 8% 0px', threshold:.12});
+    $$('.rv,.stg').forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- global scroll: progress, marquee, route ---------- */
+  if(A){
+    G.to('#prog', {scaleX:1, ease:'none', scrollTrigger:{trigger:'main', start:'top top', end:'bottom bottom', scrub:.3}});
+    G.to('#rtFill', {scaleX:1, ease:'none', scrollTrigger:{trigger:'#podium', start:'top bottom', endTrigger:'#cheat', end:'bottom bottom', scrub:.3}});
+    G.from('.rt a', {x:60, rotation:4, duration:.7, ease:'back.out(1.8)', stagger:.04, scrollTrigger:{trigger:'.route', start:'top 92%', once:true}});
+    $$('.track').forEach(function(tr){
+      var loop = G.fromTo(tr, {xPercent:0}, {xPercent:-50, duration:30, ease:'none', repeat:-1}), lbl = tr.parentNode;
+      ScrollTrigger.create({trigger:lbl, start:'top bottom', end:'bottom top', onToggle:function(s){ s.isActive ? loop.play() : loop.pause(); }, onUpdate:function(s){
+        var v = s.getVelocity();
+        G.to(loop, {timeScale:1 + Math.min(Math.abs(v)/250, 7), duration:.2, overwrite:true});
+        G.to(loop, {timeScale:1, duration:1.2, delay:.25, overwrite:false});
+      }});
+    });
+  } else { var pr = $('#prog'); if(pr) pr.style.transform = 'scaleX(0)'; }
+
+  /* ---------- HERO: cursor clicks the steps ---------- */
+  if(A){
+    var hv = $('#hvis'), cur = $('#hcur'), lbs = $$('.stp .lb', hv);
+    G.to('.wm2', {xPercent:-6, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+    G.to('.opill', {y:-8, rotation:-4, duration:1.6, ease:'sine.inOut', yoyo:true, repeat:-1});
+    var htl = G.timeline({repeat:-1, repeatDelay:.6, paused:true});
+    function hpos(i){ var r = rel(lbs[i], hv); return {x:r.x + r.w*.7, y:r.y + r.h*.6}; }
+    G.set(cur, {x:function(){ return hpos(0).x + 60; }, y:function(){ return hpos(0).y + 80; }});
+    [0,1,2].forEach(function(i){
+      htl.to(cur, {x:function(){ return hpos(i).x; }, y:function(){ return hpos(i).y; }, duration:.9, ease:'power3.inOut'})
+         .to(cur, {scale:.8, duration:.12, yoyo:true, repeat:1})
+         .fromTo(lbs[i], {scale:1}, {scale:1.14, duration:.18, yoyo:true, repeat:1, ease:'power2.out'}, '<')
+         .fromTo(lbs[i].parentNode.querySelector('.col'), {scaleY:1}, {scaleY:1.08, transformOrigin:'50% 100%', duration:.25, yoyo:true, repeat:1, ease:'power2.out'}, '<')
+         .to({}, {duration:.35});
+    });
+    whenVisible(hv, function(){ htl.play(); }, function(){ htl.pause(); }, .05);
+  }
+
+  /* ---------- INTRO: word ladder ---------- */
+  (function(){
+    var LD = [
+      {p:'gr{o}ß', c:'gr{o}ß[er]', s:'<am >gr{o}ß[ten]', r:'большой', n:'ß проглатывает s: am größten, а не größsten.'},
+      {p:'klein', c:'klein[er]', s:'<am >klein[sten]', r:'маленький', n:'Ничего лишнего. Чистая классика.'},
+      {p:'alt', c:'{a}lt[er]', s:'<am >{a}lt[esten]', r:'старый', n:'Умляут плюс вставная e. Комбо.'},
+      {p:'jung', c:'j{u}ng[er]', s:'<am >j{u}ng[sten]', r:'молодой', n:'Две точки сверху. И так до самого конца.'},
+      {p:'warm', c:'w{a}rm[er]', s:'<am >w{a}rm[sten]', r:'тёплый', n:'Точки сверху, как солнце в июле.'}
+    ];
+    var rows = [$('#l1'), $('#l2'), $('#l3')], cap = $('#lcap'), li = 0, tl = null, to = null, run = false;
+    function fill(it){ rows[0].innerHTML = R(it.p); rows[1].innerHTML = R(it.c); rows[2].innerHTML = R(it.s); cap.innerHTML = '<b>' + plain(it.p) + '</b> — ' + it.r + '. ' + it.n; }
+    fill(LD[0]);
+    if(!A) return;
+    function play(){
+      var it = LD[li]; fill(it);
+      tl = G.timeline({onComplete:function(){ li = (li+1) % LD.length; to = setTimeout(function(){ if(run) play(); }, 2300); }});
+      rows.forEach(function(row, k){
+        var chs = $$('.ch', row), us = $$('.u i', row), ss = $$('.s, .a', row);
+        tl.from(chs, {yPercent:90, rotation:10, opacity:0, duration:.45, ease:'back.out(2)', stagger:.04}, k ? '+=.2' : 0);
+        if(us.length) tl.from(us, {y:-70, opacity:0, duration:.9, ease:'bounce.out'}, '-=.15');
+        if(ss.length) tl.from(ss, {y:-50, scale:.4, rotation:-14, opacity:0, duration:.7, ease:'back.out(3)', stagger:.12}, us.length ? '-=.55' : '-=.2');
+      });
+      tl.from(cap, {y:14, opacity:0, duration:.45}, '-=.3');
+    }
+    whenVisible($('#ladder'), function(){ if(run) return; run = true; play(); }, function(){ run = false; clearTimeout(to); if(tl){ tl.progress(1).kill(); tl = null; } }, .3);
+  })();
+
+  /* ---------- 01 PODIUM ---------- */
+  (function(){
+    var PD = {
+      klein:{f:['klein','klein[er]','<am >klein[sten]'], ex:[['Meine Wohnung ist klein.','Моя квартира маленькая.'],['Deine Wohnung ist kleiner als meine.','Твоя меньше моей. Сочувствую.'],['Seine Wohnung ist am kleinsten.','А у него самая маленькая. Зато в центре.']]},
+      schnell:{f:['schnell','schnell[er]','<am >schnell[sten]'], ex:[['Der Bus ist schnell.','Автобус быстрый.'],['Der Zug ist schneller als der Bus.','Поезд быстрее автобуса.'],['Im Stau ist das Fahrrad am schnellsten.','В пробке быстрее всех велосипед.']]},
+      alt:{f:['alt','{a}lt[er]','<am >{a}lt[esten]'], ex:[['Mein Kater ist alt.','Мой кот старый.'],['Dein Hund ist älter als mein Kater.','Твоя собака старше моего кота.'],['Die Schildkröte ist am ältesten.','Черепаха старше всех. Она видела всё.']]},
+      warm:{f:['warm','w{a}rm[er]','<am >w{a}rm[sten]'], ex:[['Im Mai ist es warm.','В мае тепло.'],['Im Juni ist es wärmer.','В июне теплее.'],['Im Juli ist es am wärmsten.','В июле теплее всего. Кондиционеров, конечно, нет.']]},
+      gut:{irr:1, f:['gut','!besser','<am >!besten'], ex:[['Tee ist gut.','Чай — хорошо.'],['Kaffee ist besser.','Кофе лучше.'],['Schlaf ist am besten.','Сон лучше всего. Спорить бесполезно.']]},
+      viel:{irr:1, f:['viel','!mehr','<am >!meisten'], ex:[['Ich arbeite viel.','Я много работаю.'],['Du arbeitest mehr.','Ты работаешь больше.'],['Die Katze schläft am meisten.','Больше всех спит кошка. Мудрая.']]}
+    };
+    var CAP = [
+      '<b>Positiv.</b> Основа, как в словаре. Ничего не делаем. Кайф.',
+      '<b>Komparativ.</b> Приклеиваем <b class="li">-er</b>. Короткие с a, o, u ещё и точки получают.',
+      '<b>Superlativ.</b> <b class="li">am</b> спереди, <b class="li">-sten</b> сзади. Корона ваша.'
+    ];
+    var CAPI = '<b>Komparativ.</b> А тут сюрприз: слово вообще другое. Исключение, учим в лицо.';
+    var pcs = $$('#pstage .pc'), pw = [$('#pw1'), $('#pw2'), $('#pw3')], cap = $('#pcap'), ex = $('#pex'), dots = $$('#pdots button'), play = $('#pplay'), chips = $$('#pchips .chip');
+    var adj = 'klein', step = 3, auto = !reduce, t = null, vis = false;
+    function renderAdj(){
+      var d = PD[adj];
+      pw.forEach(function(w, i){ w.innerHTML = R(d.f[i]); });
+      ex.innerHTML = d.ex.map(function(e, i){ return '<div class="ex"><p><span class="de">' + esc(e[0]) + '</span><small>' + esc(e[1]) + '</small></p><button class="say" data-say="' + esc(e[0]) + '" aria-label="Послушать"><svg><use href="#spk"/></svg></button></div>'; }).join('');
+    }
+    function setStep(n, anim){
+      step = n;
+      pcs.forEach(function(p){ var at = +p.dataset.at; p.classList.toggle('on', at <= n); p.classList.toggle('cr', at === 3 && n >= 3); });
+      dots.forEach(function(d){ d.classList.toggle('on', +d.dataset.s === n); });
+      $$('.ex', ex).forEach(function(e, i){ e.classList.toggle('off', i >= n); });
+      cap.innerHTML = n === 2 && PD[adj].irr ? CAPI : CAP[n-1];
+      if(A && anim){
+        var w = pw[n-1], parts = $$('.s, .a, .irr, .u i', w);
+        G.fromTo(w, {scale:.7}, {scale:1, duration:.7, ease:'back.out(2.6)', delay:.25});
+        if(parts.length) G.from(parts, {y:-46, rotation:-16, scale:.4, duration:.8, ease:'back.out(3)', stagger:.12, delay:.45});
+        G.fromTo(cap, {y:10}, {y:0, duration:.5, ease:'power3.out'});
+      }
+    }
+    function setAdj(a, anim){
+      adj = a; chips.forEach(function(c){ c.classList.toggle('on', c.dataset.a === a); });
+      renderAdj(); setStep(anim ? 1 : step, anim);
+    }
+    function stopAuto(){ auto = false; clearTimeout(t); play.innerHTML = '<svg class="ic"><use href="#i-play"/></svg>'; play.setAttribute('aria-label', 'Запустить'); }
+    function loop(){
+      clearTimeout(t); if(!auto || !vis) return;
+      t = setTimeout(function(){
+        if(step < 3) setStep(step + 1, true);
+        else { var keys = Object.keys(PD), i = (keys.indexOf(adj) + 1) % keys.length; setAdj(keys[i], true); }
+        loop();
+      }, step < 3 ? 1700 : 2800);
+    }
+    dots.forEach(function(d){ d.onclick = function(){ stopAuto(); setStep(+d.dataset.s, true); }; });
+    chips.forEach(function(c){ c.onclick = function(){ stopAuto(); setAdj(c.dataset.a, true); say(plain(PD[c.dataset.a].f.join(', '))); }; });
+    play.onclick = function(){ if(auto){ stopAuto(); } else { auto = true; play.innerHTML = '<svg class="ic"><use href="#i-pause"/></svg>'; play.setAttribute('aria-label', 'Пауза'); if(step >= 3) setAdj(adj, true); loop(); } };
+    renderAdj(); setStep(3, false);
+    if(reduce) stopAuto();
+    whenVisible($('#pstage'), function(){ if(vis) return; vis = true; if(auto){ setStep(1, true); loop(); } }, function(){ vis = false; clearTimeout(t); }, .35);
+  })();
+
+  /* ---------- 02 KEYPAD ---------- */
+  (function(){
+    var KA = {schnell:['Der Zug ist schneller als das Auto.','Поезд быстрее машины.'], neu:['Toms Fahrrad ist neuer als meins.','Велосипед Тома новее моего.'], billig:['Online ist es billiger als im Laden.','Онлайн дешевле, чем в магазине.'], lecker:['Omas Kuchen ist leckerer als meiner.','Бабушкин пирог вкуснее моего. Всегда.'], klar:['Jetzt ist alles klarer.','Теперь всё яснее. Надеюсь.'], laut:['Die Nachbarn sind lauter als wir.','Соседи громче нас. Кто бы сомневался.']};
+    var dw = $('#dw'), df = $('#dform'), ds = $('#dsent'), keys = $$('#keys button'), word = 'schnell', plus = true, touched = false, t = null, seq = 0, order = Object.keys(KA), oi = 0;
+    function hit(k){ var b = keys.filter(function(x){ return x.dataset.k === k; })[0]; if(!b) return; b.classList.add('hit'); setTimeout(function(){ b.classList.remove('hit'); }, 200); }
+    function sent(w){ var s = KA[w][0], f = w + 'er'; return '<span class="de">' + s.replace(f, '<b class="li">' + f + '</b>') + '</span><br><span class="ru">' + KA[w][1] + '</span>'; }
+    function press(k, user){
+      hit(k);
+      if(KA[k]){ word = k; plus = false; df.textContent = 'основа'; dw.textContent = k; ds.textContent = ''; if(A) G.fromTo(dw, {y:16, opacity:0}, {y:0, opacity:1, duration:.35, ease:'power3.out'}); }
+      else if(k === '+er'){ if(!word) return; plus = true; df.textContent = 'основа + er'; dw.innerHTML = word + '<span class="s">er</span>'; if(A) G.from($('.s', dw), {y:-44, rotation:-20, scale:.3, duration:.7, ease:'back.out(3)'}); }
+      else if(k === '='){ if(!word){ ds.textContent = 'Сначала выберите слово'; return; } if(!plus){ ds.textContent = 'Забыли +er. Бывает с лучшими из нас'; return; } ds.innerHTML = sent(word); if(A) G.from(ds, {y:12, opacity:0, duration:.4}); if(user) say(KA[word][0]); }
+      else if(k === 'C'){ word = ''; plus = false; df.textContent = ''; dw.textContent = '0'; ds.textContent = ''; }
+    }
+    keys.forEach(function(b){ b.onclick = function(){ touched = true; clearInterval(t); press(b.dataset.k, true); }; });
+    ds.innerHTML = sent('schnell');
+    if(reduce) return;
+    whenVisible($('#keys'), function(){
+      if(touched || t) return;
+      t = setInterval(function(){
+        if(touched){ clearInterval(t); return; }
+        if(seq === 0){ oi = (oi + 1) % order.length; press(order[oi]); }
+        else if(seq === 1) press('+er'); else press('=');
+        seq = (seq + 1) % 4;
+      }, 1000);
+    }, function(){ clearInterval(t); t = null; });
+  })();
+
+  /* ---------- 02 ALS vs WIE ---------- */
+  (function(){
+    var L = $('#dL'), Rr = $('#dR'), mid = $('#dmid'), s = $('#dsent2'), sb = $('#dsay'), btns = $$('.dtog .chip'), mode = 'als', touched = false, t = null;
+    var M = {als:{l:90, r:170, m:'als', de:'Deine Wohnung ist <b>kleiner als</b> meine.', p:'Deine Wohnung ist kleiner als meine.', ru:'Твоя квартира меньше, чем моя.'},
+             wie:{l:150, r:150, m:'wie', de:'Deine Wohnung ist <b>so klein wie</b> meine.', p:'Deine Wohnung ist so klein wie meine.', ru:'Твоя квартира такая же маленькая, как моя.'}};
+    function set(m, anim){
+      mode = m; var d = M[m];
+      L.style.setProperty('--dh', d.l + 'px'); Rr.style.setProperty('--dh', d.r + 'px');
+      mid.textContent = d.m; mid.classList.toggle('wie', m === 'wie');
+      s.innerHTML = '<span class="de">' + d.de + '</span><small>' + d.ru + '</small>'; sb.dataset.say = d.p;
+      btns.forEach(function(b){ b.classList.toggle('on', b.dataset.d === m); });
+      if(A && anim){ G.fromTo(mid, {scale:.3, rotation:-30}, {scale:1, rotation:0, duration:.8, ease:'elastic.out(1,.45)', delay:.35}); G.from($('.de b', s), {y:-20, opacity:0, duration:.5, ease:'back.out(2.5)', delay:.5}); }
+    }
+    btns.forEach(function(b){ b.onclick = function(){ touched = true; clearInterval(t); set(b.dataset.d, true); say(M[b.dataset.d].p); }; });
+    if(reduce) return;
+    whenVisible($('#dstage'), function(){ if(touched || t) return; t = setInterval(function(){ if(touched){ clearInterval(t); return; } set(mode === 'als' ? 'wie' : 'als', true); }, 3200); }, function(){ clearInterval(t); t = null; });
+  })();
+
+  /* ---------- 03 UMLAUT dots ---------- */
+  loopFlip($('#ulist'), $$('#ulist .flip'), 2400);
+  if(A){
+    var utl = G.timeline({repeat:-1, repeatDelay:.8, paused:true});
+    utl.fromTo('.ut .dd b', {y:-150, rotation:0, opacity:1}, {y:0, duration:1, ease:'bounce.out', stagger:.12})
+       .fromTo('.ut', {scale:1}, {scale:1.06, duration:.15, yoyo:true, repeat:1, stagger:.12}, '-=.8')
+       .to('.ut .dd b', {y:-150, opacity:0, duration:.5, ease:'power2.in', stagger:.06, delay:1.6});
+    whenVisible($('.utiles'), function(){ utl.play(); }, function(){ utl.pause(); }, .2);
+  }
+
+  /* ---------- 04 E DROP ---------- */
+  (function(){
+    var IT = [
+      {w:'dunkel', d:4, r:'тёмный', k:'dunkler', s:'am dunkelsten'},
+      {w:'teuer', d:3, r:'дорогой', k:'teurer', s:'am teuersten'},
+      {w:'sauer', d:3, r:'кислый', k:'saurer', s:'am sauersten'},
+      {w:'edel', d:2, r:'благородный', k:'edler', s:'am edelsten'}
+    ];
+    var row = $('#erow'), bin = $('#ebin'), cap = $('#ecap'), box = $('#ed'), rows = $$('#erows2 .e2:not(.hd)'), ii = 0, tl = null, to = null, run = false;
+    if(!A) return;
+    function build(it){
+      row.innerHTML = it.w.split('').map(function(c, i){ return '<span class="L' + (i === it.d ? ' drop' : '') + '"><b>' + c + '</b></span>'; }).join('') + '<span class="L sfx gone"><b>e</b></span><span class="L sfx gone"><b>r</b></span>';
+      rows.forEach(function(r, i){ r.classList.toggle('on', i === ii); });
+    }
+    function play(){
+      var it = IT[ii]; build(it);
+      var e = $('.drop', row), eb = $('b', e), sf = $$('.sfx', row);
+      cap.innerHTML = '<b>' + it.w + '</b> — ' + it.r + '. Видите e перед последней буквой?';
+      tl = G.timeline({onComplete:function(){ ii = (ii+1) % IT.length; to = setTimeout(function(){ if(run) play(); }, 2400); }});
+      tl.from($$('.L:not(.sfx) b', row), {yPercent:80, opacity:0, duration:.4, ease:'back.out(2)', stagger:.05})
+        .add(function(){ e.classList.add('bad'); }, '+=.5')
+        .fromTo(eb, {scale:1}, {scale:1.35, duration:.2, yoyo:true, repeat:3, ease:'power1.inOut'})
+        .add(function(){ cap.innerHTML = 'В Komparativ она лишняя. <b>Выкидываем.</b>'; })
+        .add(function(){ var a = rel(eb, box), b = rel(bin, box), dx = b.x + b.w/2 - a.x - a.w/2, dy = b.y + b.h/2 - a.y - a.h/2; G.to(eb, {duration:.9, ease:'power2.in', rotation:300, motionPath:MP ? {path:[{x:0, y:0}, {x:dx*.5, y:Math.min(0, dy) - 70}, {x:dx, y:dy}], curviness:1.4} : undefined, x:MP ? undefined : dx, y:MP ? undefined : dy}); }, '+=.2')
+        .to({}, {duration:.9})
+        .to(eb, {scale:.2, opacity:0, duration:.15})
+        .fromTo(bin, {scale:1}, {scale:1.3, duration:.15, yoyo:true, repeat:1}, '<')
+        .add(function(){ e.classList.add('gone'); }, '<')
+        .add(function(){ sf.forEach(function(s){ s.classList.remove('gone'); }); cap.innerHTML = '<b>' + it.k + '</b> — e вылетела, -er прилетело.'; }, '+=.5')
+        .from($$('.sfx b', row), {y:-60, rotation:-30, scale:.4, duration:.8, ease:'back.out(3)', stagger:.1}, '+=.05')
+        .add(function(){ cap.innerHTML = '<b>' + it.k + '</b>. А в Superlativ e возвращается: <b class="li">' + it.s + '</b>.'; }, '+=.9');
+    }
+    whenVisible(row, function(){ if(run) return; run = true; play(); }, function(){ run = false; clearTimeout(to); if(tl){ tl.kill(); tl = null; } row.textContent = IT[ii].k; }, .3);
+  })();
+
+  /* ---------- 05 SUPERLATIV flow ---------- */
+  (function(){
+    var IT = [
+      {p:'Im Juli ist es ___.', a:'warm', y:0, o:'am wärmsten', ru:'В июле теплее всего.'},
+      {p:'Der Juli ist der ___ Monat.', a:'warm', y:1, o:'wärmste', ru:'Июль — самый тёплый месяц.'},
+      {p:'Dieses Haus ist ___.', a:'teuer', y:0, o:'am teuersten', ru:'Этот дом самый дорогой.'},
+      {p:'Das ist das ___ Haus.', a:'teuer', y:1, o:'teuerste', ru:'Это самый дорогой дом.'},
+      {p:'Claudia hat die ___ Haare.', a:'lang', y:1, o:'längsten', ru:'У Клаудии самые длинные волосы. Окончание -en, потому что множественное.'},
+      {p:'Wer läuft ___?', a:'schnell', y:0, o:'am schnellsten', ru:'Кто бегает быстрее всех?'}
+    ];
+    var box = $('#flow'), ph = $('#fphr'), fq = $('#fq'), fo = [$('#fo0'), $('#fo1')], res = $('#fres'), ii = 0, tl = null, to = null, run = false;
+    if(!A) return;
+    var dot = document.createElement('i'); dot.className = 'ldot'; dot.style.cssText = 'left:0;top:0;z-index:4;margin:-8px 0 0 -8px;opacity:0'; box.appendChild(dot);
+    function c(el){ var r = rel(el, box); return {x:r.x + r.w/2, y:r.y + r.h/2, t:r.y, b:r.y + r.h}; }
+    function play(){
+      var it = IT[ii], tgt = fo[it.y];
+      ph.innerHTML = esc(it.p).replace('___', '<i>___ (' + it.a + ')</i>');
+      fq.classList.remove('hit'); fo.forEach(function(f){ f.classList.remove('hit'); });
+      res.innerHTML = '&nbsp;';
+      tl = G.timeline({onComplete:function(){ ii = (ii+1) % IT.length; to = setTimeout(function(){ if(run) play(); }, 2600); }});
+      tl.fromTo(ph, {y:-24, scale:.85}, {y:0, scale:1, duration:.6, ease:'back.out(2.4)'})
+        .set(dot, {opacity:1, x:function(){ return c(ph).x; }, y:function(){ return c(ph).b; }})
+        .to(dot, {y:function(){ return c(fq).t + 6; }, duration:.5, ease:'power2.in'})
+        .add(function(){ fq.classList.add('hit'); })
+        .fromTo(fq, {scale:1}, {scale:1.04, duration:.15, yoyo:true, repeat:1})
+        .add(function(){ var a = c(fq), b = c(tgt); G.to(dot, MP ? {duration:.8, ease:'power2.inOut', motionPath:{path:[{x:a.x, y:a.b - 4}, {x:(a.x + b.x)/2, y:a.b + 20}, {x:b.x, y:b.t + 8}], curviness:1.3}} : {duration:.8, x:b.x, y:b.t + 8}); }, '+=.3')
+        .to({}, {duration:.8})
+        .add(function(){ fq.classList.remove('hit'); tgt.classList.add('hit'); })
+        .fromTo(tgt, {scale:.92}, {scale:1, duration:.6, ease:'elastic.out(1,.45)'})
+        .to(dot, {opacity:0, duration:.2}, '<')
+        .add(function(){ res.innerHTML = '<span class="de">' + esc(it.p).replace('___', '<b>' + it.o + '</b>') + '</span><small>' + it.ru + '</small>'; ph.innerHTML = esc(it.p).replace('___', '<b style="color:#6C4FE0">' + it.o + '</b>'); }, '+=.15')
+        .from(res, {y:16, opacity:0, duration:.5, ease:'power3.out'});
+    }
+    whenVisible(box, function(){ if(run) return; run = true; play(); }, function(){ run = false; clearTimeout(to); if(tl){ tl.progress(1).kill(); tl = null; } }, .3);
+  })();
+  if(A){
+    $$('.chart path, .chartx path').forEach(function(p){
+      var L = 600; p.style.strokeDasharray = L; p.style.strokeDashoffset = L;
+      G.to(p, {strokeDashoffset:0, duration:1.8, ease:'power2.inOut', scrollTrigger:{trigger:p.closest('.cd'), start:'top 80%', once:true}});
+    });
+    G.from('#lnPill', {scale:.3, y:30, duration:.8, ease:'back.out(3)', delay:1.4, scrollTrigger:{trigger:'#chartA', start:'top 80%', once:true}});
+  }
+
+  /* ---------- 06 PLUS E ---------- */
+  (function(){
+    var IT = [
+      {b:'kalt', st:'kält', e:'t', r:'холоднее всего'},
+      {b:'kurz', st:'kürz', e:'z', r:'короче всего'},
+      {b:'heiß', st:'heiß', e:'ß', r:'жарче всего'},
+      {b:'hübsch', st:'hübsch', e:'sch', r:'симпатичнее всех'},
+      {b:'wild', st:'wild', e:'d', r:'дичее всех'},
+      {b:'alt', st:'ält', e:'t', r:'старше всех'}
+    ];
+    var stE = $('#eStem'), ins = $('#eIns'), sf = $('#eSf'), cap = $('#ecap2'), ends = $$('#ends span'), ii = 0, tl = null, to = null, run = false;
+    if(!A) return;
+    function play(){
+      var it = IT[ii];
+      stE.textContent = it.st; ins.classList.remove('on'); stE.classList.add('bad'); sf.classList.add('clu', 'bad');
+      ends.forEach(function(s){ s.classList.toggle('on', s.dataset.e === it.e); });
+      cap.innerHTML = '<b>am ' + it.st + 'sten?</b> Попробуйте сказать вслух. Язык в узел.';
+      tl = G.timeline({onComplete:function(){ ii = (ii+1) % IT.length; to = setTimeout(function(){ if(run) play(); }, 2200); }});
+      tl.from([stE, sf], {y:-30, opacity:0, duration:.45, ease:'back.out(2)', stagger:.1})
+        .to('.einw', {x:-9, duration:.06, yoyo:true, repeat:7, ease:'none'}, '+=.5')
+        .set('.einw', {x:0})
+        .add(function(){ stE.classList.remove('bad'); sf.classList.remove('bad'); ins.classList.add('on'); cap.innerHTML = '<b>' + it.b + ' → am ' + it.st + 'esten.</b> ' + it.r.charAt(0).toUpperCase() + it.r.slice(1) + '. Вставили e, и язык развязался.'; }, '+=.7')
+        .from(ins, {y:-50, scale:.3, duration:.8, ease:'elastic.out(1,.4)'}, '+=.05');
+    }
+    whenVisible($('#eins'), function(){ if(run) return; run = true; play(); }, function(){ run = false; clearTimeout(to); if(tl){ tl.progress(1).kill(); tl = null; } stE.classList.remove('bad'); sf.classList.remove('bad'); ins.classList.add('on'); }, .3);
+  })();
+
+  /* ---------- 07 STACK ---------- */
+  (function(){
+    var IT = [
+      {ar:'ein', st:'billig', k:'er', e:'er', n:'Wagen', ru:'более дешёвая машина. Nominativ, мужской род.'},
+      {ar:'ein', st:'größ', k:'er', e:'es', n:'Haus', ru:'дом побольше. Средний род, -es.'},
+      {ar:'eine', st:'klein', k:'er', e:'e', n:'Wohnung', ru:'квартира поменьше. Wir suchen eine kleinere Wohnung.'},
+      {ar:'einen', st:'billig', k:'er', e:'en', n:'Computer', ru:'Ich brauche einen billigeren Computer. Akkusativ, поэтому -en.'},
+      {ar:'die', st:'läng', k:'st', e:'en', n:'Haare', ru:'самые длинные волосы. Superlativ собирается так же.'},
+      {ar:'mit dem', st:'schön', k:'st', e:'en', n:'Mädchen', ru:'с самой красивой девушкой. Dativ, -en.'}
+    ];
+    var line = $('#sline'), tr = $('#stru'), nx = $('#snext'), sb = $('#ssay'), ii = 0, t = null, touched = false;
+    function draw(anim){
+      var it = IT[ii], phrase = it.ar + ' ' + it.st + it.k + it.e + ' ' + it.n;
+      line.innerHTML = '<span class="sbox ar"><b>' + it.ar + '</b><small>артикль</small></span><span class="sbox"><b>' + it.st + '</b><small>основа</small></span><span class="sbox k"><b>' + it.k + '</b><small>степень</small></span><span class="sbox e"><b>' + it.e + '</b><small>окончание</small></span><span class="sbox n"><b>' + it.n + '</b><small>сущ.</small></span>';
+      tr.innerHTML = '<span class="de">' + phrase + '</span><small>' + it.ru + '</small>'; sb.dataset.say = phrase;
+      if(A && anim){
+        var bx = $$('.sbox b', line);
+        G.timeline()
+          .from([bx[0], bx[1]], {y:-60, rotation:-8, scale:.6, duration:.6, ease:'back.out(2.4)', stagger:.12})
+          .from(bx[2], {y:-120, rotation:-25, scale:.4, duration:.9, ease:'bounce.out'}, '+=.1')
+          .from(bx[3], {y:-120, rotation:25, scale:.4, duration:.9, ease:'bounce.out'}, '-=.35')
+          .from(bx[4], {x:60, rotation:6, duration:.6, ease:'back.out(2)'}, '-=.3')
+          .from(tr, {y:14, opacity:0, duration:.4}, '-=.2');
+      }
+    }
+    nx.onclick = function(){ touched = true; clearInterval(t); ii = (ii+1) % IT.length; draw(true); say(sb.dataset.say); };
+    draw(false);
+    if(reduce) return;
+    whenVisible(line, function(){ if(touched || t) return; draw(true); t = setInterval(function(){ if(touched){ clearInterval(t); return; } ii = (ii+1) % IT.length; draw(true); }, 3600); }, function(){ clearInterval(t); t = null; }, .3);
+  })();
+
+  /* ---------- 08 SOFT ---------- */
+  (function(){
+    var IT = [
+      {l:['jung','молодая'], r:['alt','старая'], m:'ältere', pos:62, cap:'<b>eine ältere Frau</b> — пожилая. Моложе, чем «eine alte Frau». Да, «старше» оказалась моложе «старой».', say:'eine ältere Frau'},
+      {l:['groß','большой'], r:['klein','маленький'], m:'kleinere', pos:58, cap:'<b>eine kleinere Stadt</b> — небольшой город. Не «меньше маленького», а скорее средненький.', say:'eine kleinere Stadt'},
+      {l:['kurz','недолго'], r:['lang','долго'], m:'längere', pos:64, cap:'<b>längere Zeit</b> — довольно долго. Но короче, чем просто «lange Zeit». Логика? Не, не слышали.', say:'längere Zeit'}
+    ];
+    var mk = $('#smark'), mw = $('#smw'), sL = $('#sL'), sR = $('#sR'), cap = $('#scap'), chips = $$('#schips .chip'), ii = 0, t = null, touched = false;
+    function set(i, anim){
+      ii = i; var it = IT[i];
+      chips.forEach(function(c){ c.classList.toggle('on', +c.dataset.i === i); });
+      sL.innerHTML = '<b>' + it.l[0] + '</b>' + it.l[1]; sR.innerHTML = '<b>' + it.r[0] + '</b>' + it.r[1];
+      mw.textContent = it.m; cap.innerHTML = it.cap;
+      if(A && anim){
+        mk.classList.remove('q');
+        G.timeline()
+          .fromTo(mk, {left:'50%'}, {left:'100%', duration:.8, ease:'power2.inOut'})
+          .add(function(){ mk.classList.add('q'); })
+          .to(mk, {left:it.pos + '%', duration:1.2, ease:'elastic.out(1,.5)'}, '+=.6')
+          .from(cap, {y:12, opacity:0, duration:.4}, '-=.6');
+      } else { mk.style.left = it.pos + '%'; mk.classList.add('q'); }
+    }
+    chips.forEach(function(c){ c.onclick = function(){ touched = true; clearInterval(t); set(+c.dataset.i, true); say(IT[+c.dataset.i].say); }; });
+    set(0, false);
+    if(reduce) return;
+    whenVisible($('#strack'), function(){ if(touched || t) return; set(ii, true); t = setInterval(function(){ if(touched){ clearInterval(t); return; } set((ii+1) % IT.length, true); }, 4200); }, function(){ clearInterval(t); t = null; }, .4);
+  })();
+
+  /* ---------- 09 NOUNS ---------- */
+  loopFlip($('#ngrid'), $$('#ngrid .flip'), 2000);
+  if(A) ScrollTrigger.batch('.nc .lt', {start:'top 90%', once:true, onEnter:function(b){ G.from(b, {rotationY:180, scale:.4, duration:.9, ease:'back.out(2)', stagger:.08}); }});
+
+  /* ---------- 10 EXCEPTIONS bento ---------- */
+  (function(){
+    var groups = $$('#bento .xf').map(function(x){ return $$('span', x); }), t = null, k = 0;
+    groups.forEach(function(g){ g[0].classList.add('on'); });
+    if(reduce) return;
+    var floats = null;
+    if(A){
+      floats = G.timeline({paused:true});
+      $$('#bento .flt, #bento .ldot').forEach(function(f, i){ floats.to(f, {y:i%2 ? -12 : 10, rotation:i%2 ? 8 : -6, duration:1.6 + (i%3)*.4, ease:'sine.inOut', yoyo:true, repeat:-1}, 0); });
+      floats.to('#bento .gear', {rotation:360, duration:9, ease:'none', repeat:-1}, 0);
+      $$('#bento .eqz i').forEach(function(b, i){ floats.to(b, {scaleY:G.utils.random(.3, 1.3), duration:.5 + i*.08, ease:'sine.inOut', yoyo:true, repeat:-1}, 0); });
+      G.from('#bento .bx', {y:50, scale:.95, duration:.8, ease:'back.out(1.6)', stagger:.07, scrollTrigger:{trigger:'#bento', start:'top 85%', once:true}});
+    }
+    function tick(){
+      k = (k+1) % 3;
+      groups.forEach(function(g, gi){ setTimeout(function(){ g.forEach(function(s, i){ s.classList.toggle('on', i === k); }); }, gi*120); });
+    }
+    whenVisible($('#bento'), function(){ floats && floats.play(); if(!t) t = setInterval(tick, 1500); }, function(){ floats && floats.pause(); clearInterval(t); t = null; }, .05);
+  })();
+
+  /* ---------- 11 QUIZ ---------- */
+  var Q = [
+    {q:'Mein Bruder ist ___ als ich. (alt)', o:['alter','älter','am ältesten'], c:1, x:'alt короткое и с a, значит умляут. И als, потому что сравниваем с кем-то.'},
+    {q:'Das ist ___ Tag meines Lebens. (gut)', o:['der beste','am besten','der gutste'], c:0, x:'Перед существительным артикль + -ste. И gut неправильный: besser, best-. «Gutste» не существует, как бы ни хотелось.'},
+    {q:'Im Januar ist es ___. (kalt)', o:['am kältesten','am kältsten','das kälteste'], c:0, x:'После ist без существительного → am …sten. Основа на -t, значит вставляем e. Иначе не выговорить.'},
+    {q:'Ich trinke ___ Kaffee als Tee. (gern)', o:['gerner','lieber','mehr gern'], c:1, x:'gern → lieber → am liebsten. «Gerner» не говорят даже дети. Ну, почти.'},
+    {q:'Wir suchen eine ___ Wohnung. (groß)', o:['größer','größere','am größten'], c:1, x:'Komparativ перед существительным получает обычное окончание. eine … Wohnung → -e. größ + er + e.'},
+    {q:'Das Kleid ist ___ als die Jacke. (teuer)', o:['teuerer','teurer','teuerster'], c:1, x:'-er теряет e: teuer → teurer. В Superlativ e вернётся: am teuersten.'}
+  ];
+  var qz = $('#qz'), qi = 0, res = [];
+  function bar(){ return '<div class="qbar">' + Q.map(function(_,i){ return '<i class="' + (res[i]===true?'ok':res[i]===false?'bad':i===qi?'cur':'') + '"></i>'; }).join('') + '</div>'; }
+  function drawQ(){
+    var it = Q[qi];
+    qz.innerHTML = bar() + '<p class="qn">Вопрос ' + (qi+1) + ' из ' + Q.length + '</p><p class="qq">' + it.q.replace('___','<u id="blank">___</u>') + '</p>' +
+      '<div class="qo">' + it.o.map(function(o,i){ return '<button type="button" data-i="' + i + '">' + o + '</button>'; }).join('') + '</div>' +
+      '<div class="qx" id="qx"><svg class="ic"><use href="#i-brain"/></svg><span>Выберите вариант. В шпаргалку не подглядываем.</span></div>';
+    $$('.qo button', qz).forEach(function(b){ b.onclick = function(){ answer(+b.dataset.i); }; });
+    if(A) G.from($$('.qo button', qz), {y:20, scale:.9, duration:.5, ease:'back.out(2)', stagger:.06});
+  }
+  function confetti(n){
+    if(!A) return;
+    var colors = ['#E3F65A','#8C6CF7','#2BA4E0','#FFFFFF','#C9E23A'];
+    for(var i=0;i<n;i++){
+      var c = document.createElement('i'); c.className = 'conf'; c.style.background = colors[i%colors.length]; qz.appendChild(c);
+      G.fromTo(c, {x:0, y:0, rotation:0}, {x:G.utils.random(-240,240), y:G.utils.random(-220,160), rotation:G.utils.random(-540,540), opacity:0, duration:G.utils.random(1,1.8), ease:'power3.out', onComplete:(function(el){ return function(){ el.remove(); }; })(c)});
+    }
+  }
+  function answer(i){
+    var it = Q[qi], ok = i === it.c; res[qi] = ok;
+    $$('.qo button', qz).forEach(function(b){ b.disabled = true; var k = +b.dataset.i; if(k === it.c) b.classList.add('ok'); else if(k === i) b.classList.add('bad'); });
+    var chosen = $$('.qo button', qz)[i];
+    if(A){ ok ? G.fromTo(chosen, {scale:.88}, {scale:1, duration:.6, ease:'elastic.out(1,.4)'}) : G.fromTo(chosen, {x:-8}, {x:0, duration:.5, ease:'elastic.out(1.2,.2)'}); }
+    $('#blank').textContent = it.o[it.c];
+    var qx = $('#qx'); qx.classList.toggle('bad', !ok);
+    qx.innerHTML = '<svg class="ic"><use href="#i-' + (ok ? 'circle-check' : 'circle-x') + '"/></svg><span>' + (ok ? '<b>Верно.</b> ' : '<b>Мимо.</b> ') + it.x + '</span>';
+    if(ok) confetti(14);
+    say(it.q.replace(/\s*\(.*\)$/, '').replace('___', it.o[it.c]));
+    $('.qbar', qz).outerHTML = bar();
+    var nb = document.createElement('button'); nb.className = 'bv qnext'; nb.type = 'button';
+    nb.innerHTML = qi < Q.length-1 ? 'Дальше <svg class="ic"><use href="#i-arrow-right"/></svg>' : 'Результат <svg class="ic"><use href="#i-trophy"/></svg>';
+    nb.onclick = function(){ qi++; qi < Q.length ? drawQ() : done(); };
+    qz.appendChild(nb); nb.focus({preventScroll:true});
+  }
+  function done(){
+    var s = res.filter(Boolean).length;
+    var msg = s === 6 ? 'Шесть из шести. Am besten. Без вариантов.' : s >= 4 ? 'Почти. Загляните ещё раз в исключения и вставную e. Там все падают.' : 'Нормально. Первый раз у всех так. Пролистайте шпаргалку и попробуйте ещё раз.';
+    var link = AD ? '<a class="bo" href="#platform">Ещё 339 тем <svg class="ic"><use href="#i-arrow-right"/></svg></a>' : '<a class="bo" href="#cheat">Шпаргалка <svg class="ic"><use href="#i-arrow-right"/></svg></a>';
+    qz.innerHTML = bar() + '<div class="qres"><div class="score">' + s + '/6</div><p class="qq" style="margin-top:10px">' + msg + '</p><div class="cta-row"><button type="button" class="bv" id="again"><svg class="ic"><use href="#i-repeat"/></svg> Ещё раз</button>' + link + '</div></div>';
+    $('#again').onclick = function(){ qi = 0; res = []; drawQ(); };
+    if(A){ G.from('.qres .score', {scale:.3, rotation:-20, duration:1, ease:'elastic.out(1,.4)'}); confetti(s*8); }
+  }
+  drawQ();
+
+  /* ---------- 12 CHEAT podium ---------- */
+  if(A){
+    G.from('#cpod .cy', {yPercent:100, duration:1.1, ease:'back.out(1.3)', stagger:{each:.15, from:'edges'}, scrollTrigger:{trigger:'#cpod', start:'top 80%', once:true}});
+    G.from('#cpod .tp .ic', {scale:.2, rotation:-120, duration:.9, ease:'back.out(2.6)', stagger:.12, delay:.7, scrollTrigger:{trigger:'#cpod', start:'top 80%', once:true}});
+  }
+
+  /* ---------- FINAL ---------- */
+  if(A && $('.fin')){
+    var ftl = G.timeline({paused:true});
+    ftl.fromTo('#scan', {y:0}, {y:function(){ var q = $('.qrbox'); return q ? q.clientHeight - 3 : 180; }, duration:1.8, ease:'sine.inOut', yoyo:true, repeat:-1}, 0)
+       .to('.fin .bp', {scale:1.04, duration:1.2, ease:'sine.inOut', yoyo:true, repeat:-1}, 0)
+       .to('.fin .cur', {x:-14, y:-10, duration:1, ease:'sine.inOut', yoyo:true, repeat:-1}, 0)
+       .to('.forb', {y:-8, rotation:-3, duration:1.8, ease:'sine.inOut', yoyo:true, repeat:-1}, 0);
+    whenVisible($('.fin'), function(){ ftl.play(); }, function(){ ftl.pause(); }, .05);
+    G.from('.fc', {y:50, scale:.9, duration:.8, ease:'back.out(2)', stagger:.1, scrollTrigger:{trigger:'.fcards', start:'top 88%', once:true}});
+    G.from('.qrbox, .fphone, .fpod', {y:60, rotation:function(i){ return i ? 4 : -4; }, duration:1, ease:'back.out(1.6)', stagger:.12, scrollTrigger:{trigger:'.fgrid', start:'top 88%', once:true}});
+  }
+
+  /* ---------- ad: counters, videos, dock ---------- */
+  $$('.count').forEach(function(c){
+    var to = +c.dataset.to, o = {v:0};
+    if(A) ScrollTrigger.create({trigger:c, start:'top 92%', once:true, onEnter:function(){ G.to(o, {v:to, duration:1.6, ease:'power2.out', onUpdate:function(){ c.textContent = Math.round(o.v) + '+'; }}); }});
+  });
+  var pio = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var v = en.target; if(v.dataset.poster) v.poster = v.dataset.poster; pio.unobserve(v); } }); }, {rootMargin:'900px 0px'}) : null;
+  $$('video.vid').forEach(function(v){ pio ? pio.observe(v) : (v.poster = v.dataset.poster); });
+  $$('video.vid').forEach(function(v){ whenVisible(v, function(){ try{ v.preload = 'auto'; var p = v.play(); p && p.catch(function(){}); }catch(e){} }, function(){ try{ v.pause(); }catch(e){} }); });
+  if(A) G.from('.shots figure', {x:80, rotation:3, duration:.8, ease:'back.out(1.6)', stagger:.08, scrollTrigger:{trigger:'.shots', start:'top 88%', once:true}});
+  var dock = $('#dock'), priceSec = $('.prices');
+  if(dock && priceSec && 'IntersectionObserver' in window){
+    var pastHero = false, atPrice = false;
+    function upd(){ var s = pastHero && !atPrice; dock.classList.toggle('show', s); dock.setAttribute('aria-hidden', !s); $('a', dock).tabIndex = s ? 0 : -1; }
+    new IntersectionObserver(function(es){ es.forEach(function(en){ pastHero = !en.isIntersecting && en.boundingClientRect.top < 0; upd(); }); }).observe($('.hero'));
+    new IntersectionObserver(function(es){ es.forEach(function(en){ atPrice = en.isIntersecting; upd(); }); }).observe(priceSec);
+    new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ atPrice = true; upd(); } else if(en.boundingClientRect.top > 0){ atPrice = false; upd(); } }); }).observe($('#final'));
+  }
+
+  if(G){ window.addEventListener('load', function(){ ScrollTrigger.refresh(); }); if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); }); }
+}
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', xInit); else xInit();
+</script>
+
+</body>
+</html>
